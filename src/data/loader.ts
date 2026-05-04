@@ -34,9 +34,9 @@ export async function loadEvents(): Promise<InjectionEvent[]> {
       if (!ex) return ev;
       return {
         ...ev,
-        title: ev.title ?? ex.episode_title,
-        audio_url: ex.episode_audio_url,
-        excerpt: ex.excerpt,
+        title: ev.title ?? ex.episode_title ?? null,
+        audio_url: ex.episode_audio_url ?? null,
+        excerpt: ex.excerpt ?? null,
       };
     });
   }
