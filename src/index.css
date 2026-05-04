@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #1a2e44;
+  --navy-light: #3d5a73;
+  --navy-faint: #e8ecf0;
+  --gold: #b8860b;
+  --gold-light: #d4a843;
+  --gold-faint: #faf6ed;
+  --cream: #f5f0e8;
+  --cream-light: #faf7f2;
+  --warm-white: #fffdf9;
+  --ink: #2c2416;
+  --text: #4a4035;
+  --text-light: #8a7e70;
+  --border: #e0d8cc;
+  --card: #fffdf9;
+
+  --font-display: 'Source Serif 4', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+code, .font-mono {
+  font-family: var(--font-mono) !important;
+}
+
+/* Subtle noise texture */
+#root::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-light);
+  border-radius: 3px;
+}
+
+::selection {
+  background: var(--gold-light);
+  color: var(--ink);
+}
+
+audio {
+  border-radius: 8px;
+}
