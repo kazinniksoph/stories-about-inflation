@@ -145,18 +145,18 @@ export default function Geography() {
         <p className="text-xs text-stone-500 mt-0.5 mb-3 leading-relaxed">
           {mapVariant === 'distinctive' ? (
             <>
-              For each state, the U.S.-majority podcast whose listeners are most
-              disproportionately based there. Surfaces small, locally concentrated
-              shows. Tile shading scales with that state's share of the show's U.S.
-              audience.
+              Each tile is the podcast whose audience is most concentrated in that
+              state, picked from U.S.-majority shows. The percentage is the share
+              of the show's U.S. listeners who live in that state. A high
+              percentage usually means a small, locally rooted show.
             </>
           ) : (
             <>
-              For each state, the U.S.-majority podcast with the most listeners in
-              that state in absolute terms. Surfaces big national shows. Tile
-              shading scales with that state's share of the show's U.S. audience
-              (large national shows often have a low share even when they're the
-              top show).
+              Each tile is the podcast with the most listeners in that state, in
+              absolute terms, picked from U.S.-majority shows. The percentage is
+              the share of the show's U.S. listeners who live in that state. Big
+              national shows can win on raw listeners while still drawing only a
+              few percent of their audience from any single state.
             </>
           )}{' '}
           Click a tile to filter the Explorer by that show.
@@ -216,12 +216,6 @@ export default function Geography() {
             ))}
           </div>
         )}
-        <p className="text-[11px] text-stone-400 mt-3 leading-relaxed">
-          A high share means the show's U.S. audience is concentrated in that state
-          (small show, local audience). A low share means the show is large and
-          national but still over-indexes there. Both kinds carry identifying
-          variation for the shift-share design.
-        </p>
       </div>
 
       <div>
