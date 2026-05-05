@@ -47,9 +47,13 @@ export default function Geography() {
   const [topGuestsOverall, setTopGuestsOverall] = useState<TopGuestByState[]>([]);
   const [topGuestsDistinctive, setTopGuestsDistinctive] = useState<TopGuestByState[]>([]);
   const [topGuestsByFrame, setTopGuestsByFrame] = useState<Record<string, TopGuestPerFrame[]>>({});
-  const [mapVariant, setMapVariant] = useState<'distinctive' | 'absolute'>('distinctive');
-  const [guestVariant, setGuestVariant] = useState<'overall' | 'distinctive'>('overall');
+  const [mapType, setMapType] = useState<'shows' | 'guests'>('shows');
+  const [mapMetric, setMapMetric] = useState<'volume' | 'distinctive'>('distinctive');
   const [selectedFrame, setSelectedFrame] = useState<string>('GEOPOLITICAL');
+
+  // Derive the active variant per type from the shared metric
+  const mapVariant = mapMetric === 'distinctive' ? 'distinctive' : 'absolute';
+  const guestVariant = mapMetric === 'distinctive' ? 'distinctive' : 'overall';
 
   useEffect(() => {
     loadDose().then(setDose);
@@ -132,44 +136,69 @@ export default function Geography() {
         </p>
       </div>
 
-      {/* Tile-grid US map: per-state top show (distinctive or absolute) */}
+      {/* Unified tile-grid US map: top show OR top guest, by volume or distinctiveness */}
       <div className="rounded-lg border border-stone-200 bg-white p-5">
-        <div className="flex items-start justify-between gap-4 mb-1">
+        <div className="flex items-start justify-between gap-4 mb-1 flex-wrap">
           <h3 className="text-sm font-semibold text-stone-900">
-            Each state's top podcast
+            Each state's top {mapType === 'shows' ? 'podcast' : 'carrier guest'}
           </h3>
-          <div className="flex rounded-md overflow-hidden border border-stone-300 shrink-0 text-xs">
-            <button
-              onClick={() => setMapVariant('distinctive')}
-              className={`px-2.5 py-1 transition-colors ${
-                mapVariant === 'distinctive'
-                  ? 'bg-stone-900 text-white'
-                  : 'bg-white text-stone-600 hover:bg-stone-100'
-              }`}
-            >
-              Most distinctive
-            </button>
-            <button
-              onClick={() => setMapVariant('absolute')}
-              className={`px-2.5 py-1 border-l border-stone-300 transition-colors ${
-                mapVariant === 'absolute'
-                  ? 'bg-stone-900 text-white'
-                  : 'bg-white text-stone-600 hover:bg-stone-100'
-              }`}
-            >
-              Largest audience
-            </button>
+          <div className="flex gap-2 shrink-0 text-xs">
+            <div className="flex rounded-md overflow-hidden border border-stone-300">
+              <button
+                onClick={() => setMapType('shows')}
+                className={`px-2.5 py-1 transition-colors ${
+                  mapType === 'shows'
+                    ? 'bg-stone-900 text-white'
+                    : 'bg-white text-stone-600 hover:bg-stone-100'
+                }`}
+              >
+                Shows
+              </button>
+              <button
+                onClick={() => setMapType('guests')}
+                className={`px-2.5 py-1 border-l border-stone-300 transition-colors ${
+                  mapType === 'guests'
+                    ? 'bg-stone-900 text-white'
+                    : 'bg-white text-stone-600 hover:bg-stone-100'
+                }`}
+              >
+                Guests
+              </button>
+            </div>
+            <div className="flex rounded-md overflow-hidden border border-stone-300">
+              <button
+                onClick={() => setMapMetric('distinctive')}
+                className={`px-2.5 py-1 transition-colors ${
+                  mapMetric === 'distinctive'
+                    ? 'bg-stone-900 text-white'
+                    : 'bg-white text-stone-600 hover:bg-stone-100'
+                }`}
+              >
+                Most distinctive
+              </button>
+              <button
+                onClick={() => setMapMetric('volume')}
+                className={`px-2.5 py-1 border-l border-stone-300 transition-colors ${
+                  mapMetric === 'volume'
+                    ? 'bg-stone-900 text-white'
+                    : 'bg-white text-stone-600 hover:bg-stone-100'
+                }`}
+              >
+                {mapType === 'shows' ? 'Largest audience' : 'Largest reach'}
+              </button>
+            </div>
           </div>
         </div>
         <p className="text-xs text-stone-500 mt-0.5 mb-4 leading-relaxed">
-          {mapVariant === 'distinctive' ? (
+          {mapType === 'shows' && mapMetric === 'distinctive' && (
             <>
               For each state, the U.S.-majority podcast whose listeners are most
               disproportionately based there — surfaces small, locally concentrated
               shows. Tile shading scales with that state's share of the show's U.S.
               audience.
             </>
-          ) : (
+          )}
+          {mapType === 'shows' && mapMetric === 'volume' && (
             <>
               For each state, the U.S.-majority podcast with the most listeners in
               that state in absolute terms — surfaces big national shows. Tile
@@ -177,113 +206,26 @@ export default function Geography() {
               (large national shows often have a low share even when they're the
               top show).
             </>
-          )}{' '}
-          Click a tile to filter the Explorer by that show's appearances.
-        </p>
-        {topShows.length === 0 ? (
-          <div className="text-center py-12 text-stone-400 text-sm">Loading map...</div>
-        ) : (
-          <div className="space-y-1">
-            {TILE_GRID.map((row, ri) => (
-              <div key={ri} className="grid grid-cols-11 gap-1">
-                {row.map((st, ci) => {
-                  if (!st) return <div key={ci} />;
-                  const entry = topShowByState[st];
-                  if (!entry) {
-                    return (
-                      <div
-                        key={ci}
-                        className="rounded-sm border border-stone-200 bg-stone-50 aspect-[4/3] flex items-center justify-center text-[10px] font-mono text-stone-400"
-                      >
-                        {st}
-                      </div>
-                    );
-                  }
-                  const t = shareRange.max > shareRange.min
-                    ? (entry.state_share - shareRange.min) / (shareRange.max - shareRange.min)
-                    : 0.5;
-                  // Tint navy with intensity proportional to share
-                  const alphaPct = Math.round(15 + t * 60);
-                  const bg = `rgba(30, 58, 95, ${alphaPct / 100})`;
-                  const textColor = t > 0.55 ? '#ffffff' : '#1f3550';
-                  return (
-                    <Link
-                      key={ci}
-                      to={`/explorer?q=${encodeURIComponent(entry.top_show)}`}
-                      title={`${STATE_NAMES[st] || st}: ${entry.top_show} (${(entry.state_share * 100).toFixed(1)}% of show's US audience)`}
-                      className="rounded-sm border border-stone-200 aspect-[4/3] p-1 flex flex-col justify-between hover:border-stone-400 transition-colors group"
-                      style={{ backgroundColor: bg, color: textColor }}
-                    >
-                      <div className="flex items-center justify-between text-[9px] font-mono opacity-80">
-                        <span>{st}</span>
-                        <span className="tabular-nums">{(entry.state_share * 100).toFixed(0)}%</span>
-                      </div>
-                      <div className="text-[10px] leading-tight font-medium line-clamp-3 group-hover:underline decoration-1 underline-offset-2">
-                        {entry.top_show}
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
-            ))}
-          </div>
-        )}
-        <p className="text-[11px] text-stone-400 mt-3 leading-relaxed">
-          A high share means the show's U.S. audience is concentrated in that state
-          (small show, local audience). A low share means the show is large and
-          national but still over-indexes there. Both kinds carry identifying
-          variation for the shift-share design.
-        </p>
-      </div>
-
-      {/* Tile-grid US map: per-state top carrier guest */}
-      <div className="rounded-lg border border-stone-200 bg-white p-5">
-        <div className="flex items-start justify-between gap-4 mb-1">
-          <h3 className="text-sm font-semibold text-stone-900">
-            Each state's top carrier guest
-          </h3>
-          <div className="flex rounded-md overflow-hidden border border-stone-300 shrink-0 text-xs">
-            <button
-              onClick={() => setGuestVariant('overall')}
-              className={`px-2.5 py-1 transition-colors ${
-                guestVariant === 'overall'
-                  ? 'bg-stone-900 text-white'
-                  : 'bg-white text-stone-600 hover:bg-stone-100'
-              }`}
-            >
-              Largest reach
-            </button>
-            <button
-              onClick={() => setGuestVariant('distinctive')}
-              className={`px-2.5 py-1 border-l border-stone-300 transition-colors ${
-                guestVariant === 'distinctive'
-                  ? 'bg-stone-900 text-white'
-                  : 'bg-white text-stone-600 hover:bg-stone-100'
-              }`}
-            >
-              Most distinctive
-            </button>
-          </div>
-        </div>
-        <p className="text-xs text-stone-500 mt-0.5 mb-4 leading-relaxed">
-          {guestVariant === 'overall' ? (
-            <>
-              For each state, the carrier guest who reached that state most across
-              all their carrier appearances (sum of audience-share × show reach).
-              Tile shading scales with the share of <em>that guest's</em> total
-              reach landing in this state.
-            </>
-          ) : (
+          )}
+          {mapType === 'guests' && mapMetric === 'distinctive' && (
             <>
               For each state, the carrier guest whose total reach is most
               over-indexed there (highest share of their reach landing in this
               state). Surfaces guests with locally concentrated footprints. Tile
               shading scales with that share.
             </>
+          )}
+          {mapType === 'guests' && mapMetric === 'volume' && (
+            <>
+              For each state, the carrier guest who reached that state most across
+              all their carrier appearances (sum of audience-share × show reach).
+              Tile shading scales with the share of <em>that guest's</em> total
+              reach landing in this state.
+            </>
           )}{' '}
-          Click a tile to filter the Explorer by that guest's appearances.
+          Click a tile to filter the Explorer by that {mapType === 'shows' ? 'show' : 'guest'}.
         </p>
-        {topGuests.length === 0 ? (
+        {(mapType === 'shows' ? topShows.length === 0 : topGuests.length === 0) ? (
           <div className="text-center py-12 text-stone-400 text-sm">Loading map...</div>
         ) : (
           <div className="space-y-1">
@@ -291,46 +233,90 @@ export default function Geography() {
               <div key={ri} className="grid grid-cols-11 gap-1">
                 {row.map((st, ci) => {
                   if (!st) return <div key={ci} />;
-                  const entry = topGuestByState[st];
-                  if (!entry) {
+
+                  if (mapType === 'shows') {
+                    const entry = topShowByState[st];
+                    if (!entry) {
+                      return (
+                        <div
+                          key={ci}
+                          className="rounded-sm border border-stone-200 bg-stone-50 aspect-[4/3] flex items-center justify-center text-[10px] font-mono text-stone-400"
+                        >
+                          {st}
+                        </div>
+                      );
+                    }
+                    const t = shareRange.max > shareRange.min
+                      ? (entry.state_share - shareRange.min) / (shareRange.max - shareRange.min)
+                      : 0.5;
+                    // Navy tint
+                    const alphaPct = Math.round(15 + t * 60);
+                    const bg = `rgba(30, 58, 95, ${alphaPct / 100})`;
+                    const textColor = t > 0.55 ? '#ffffff' : '#1f3550';
                     return (
-                      <div
+                      <Link
                         key={ci}
-                        className="rounded-sm border border-stone-200 bg-stone-50 aspect-[4/3] flex items-center justify-center text-[10px] font-mono text-stone-400"
+                        to={`/explorer?q=${encodeURIComponent(entry.top_show)}`}
+                        title={`${STATE_NAMES[st] || st}: ${entry.top_show} (${(entry.state_share * 100).toFixed(1)}% of show's US audience)`}
+                        className="rounded-sm border border-stone-200 aspect-[4/3] p-1 flex flex-col justify-between hover:border-stone-400 transition-colors group"
+                        style={{ backgroundColor: bg, color: textColor }}
                       >
-                        {st}
-                      </div>
+                        <div className="flex items-center justify-between text-[9px] font-mono opacity-80">
+                          <span>{st}</span>
+                          <span className="tabular-nums">{(entry.state_share * 100).toFixed(0)}%</span>
+                        </div>
+                        <div className="text-[10px] leading-tight font-medium line-clamp-3 group-hover:underline decoration-1 underline-offset-2">
+                          {entry.top_show}
+                        </div>
+                      </Link>
+                    );
+                  } else {
+                    const entry = topGuestByState[st];
+                    if (!entry) {
+                      return (
+                        <div
+                          key={ci}
+                          className="rounded-sm border border-stone-200 bg-stone-50 aspect-[4/3] flex items-center justify-center text-[10px] font-mono text-stone-400"
+                        >
+                          {st}
+                        </div>
+                      );
+                    }
+                    const t = guestShareRange.max > guestShareRange.min
+                      ? (entry.share_in_state - guestShareRange.min) / (guestShareRange.max - guestShareRange.min)
+                      : 0.5;
+                    // Plum tint to differentiate from the navy show view
+                    const alphaPct = Math.round(15 + t * 60);
+                    const bg = `rgba(95, 47, 95, ${alphaPct / 100})`;
+                    const textColor = t > 0.55 ? '#ffffff' : '#3a1f3a';
+                    return (
+                      <Link
+                        key={ci}
+                        to={`/explorer?q=${encodeURIComponent(entry.top_guest)}`}
+                        title={`${STATE_NAMES[st] || st}: ${entry.top_guest} (${entry.n_events} events on ${entry.n_shows} shows; ${(entry.share_in_state * 100).toFixed(1)}% of guest's reach)`}
+                        className="rounded-sm border border-stone-200 aspect-[4/3] p-1 flex flex-col justify-between hover:border-stone-400 transition-colors group"
+                        style={{ backgroundColor: bg, color: textColor }}
+                      >
+                        <div className="flex items-center justify-between text-[9px] font-mono opacity-80">
+                          <span>{st}</span>
+                          <span className="tabular-nums">{(entry.share_in_state * 100).toFixed(0)}%</span>
+                        </div>
+                        <div className="text-[10px] leading-tight font-medium line-clamp-3 group-hover:underline decoration-1 underline-offset-2">
+                          {entry.top_guest}
+                        </div>
+                      </Link>
                     );
                   }
-                  const t = guestShareRange.max > guestShareRange.min
-                    ? (entry.share_in_state - guestShareRange.min) / (guestShareRange.max - guestShareRange.min)
-                    : 0.5;
-                  // Plum tint to differentiate from the navy show map
-                  const alphaPct = Math.round(15 + t * 60);
-                  const bg = `rgba(95, 47, 95, ${alphaPct / 100})`;
-                  const textColor = t > 0.55 ? '#ffffff' : '#3a1f3a';
-                  return (
-                    <Link
-                      key={ci}
-                      to={`/explorer?q=${encodeURIComponent(entry.top_guest)}`}
-                      title={`${STATE_NAMES[st] || st}: ${entry.top_guest} (${entry.n_events} events on ${entry.n_shows} shows; ${(entry.share_in_state * 100).toFixed(1)}% of guest's reach)`}
-                      className="rounded-sm border border-stone-200 aspect-[4/3] p-1 flex flex-col justify-between hover:border-stone-400 transition-colors group"
-                      style={{ backgroundColor: bg, color: textColor }}
-                    >
-                      <div className="flex items-center justify-between text-[9px] font-mono opacity-80">
-                        <span>{st}</span>
-                        <span className="tabular-nums">{(entry.share_in_state * 100).toFixed(0)}%</span>
-                      </div>
-                      <div className="text-[10px] leading-tight font-medium line-clamp-3 group-hover:underline decoration-1 underline-offset-2">
-                        {entry.top_guest}
-                      </div>
-                    </Link>
-                  );
                 })}
               </div>
             ))}
           </div>
         )}
+        <p className="text-[11px] text-stone-400 mt-3 leading-relaxed">
+          {mapType === 'shows'
+            ? 'Toggle between Shows and Guests above. A high share means the show\'s audience (or the guest\'s reach) is concentrated in that state; a low share means it\'s a large national entity that still over-indexes there. Both kinds carry identifying variation for the shift-share design.'
+            : 'Toggle between Shows and Guests above. Guest reach is the sum of audience-share × show reach across the carrier\'s appearances; the same metric the carrier-IV uses to attribute exposure across states.'}
+        </p>
       </div>
 
       <div>
