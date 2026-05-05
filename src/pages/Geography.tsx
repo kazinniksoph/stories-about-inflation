@@ -1,10 +1,10 @@
 import { useEffect, useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  loadDose, loadTopShowsByState, loadTopGuestsByState, loadTopGuestsByFrame,
+  loadDose, loadTopShowsByState, loadTopGuestsByFrame,
 } from '../data/loader';
 import type {
-  StateMonthDose, TopShowByState, TopGuestByState, TopGuestPerFrame,
+  StateMonthDose, TopShowByState, TopGuestPerFrame,
 } from '../types';
 import { FRAME_COLORS, FRAME_LABELS, FOCUS_FRAMES } from '../types';
 
@@ -53,40 +53,18 @@ export default function Geography() {
   const [dose, setDose] = useState<StateMonthDose[]>([]);
   const [topShowsDistinctive, setTopShowsDistinctive] = useState<TopShowByState[]>([]);
   const [topShowsAbsolute, setTopShowsAbsolute] = useState<TopShowByState[]>([]);
-  const [topGuestsOverall, setTopGuestsOverall] = useState<TopGuestByState[]>([]);
-  const [topGuestsDistinctive, setTopGuestsDistinctive] = useState<TopGuestByState[]>([]);
   const [topGuestsByFrame, setTopGuestsByFrame] = useState<Record<string, TopGuestPerFrame[]>>({});
-  const [mapType, setMapType] = useState<'shows' | 'guests'>('shows');
-  const [mapMetric, setMapMetric] = useState<'volume' | 'distinctive'>('distinctive');
+  const [mapVariant, setMapVariant] = useState<'distinctive' | 'absolute'>('distinctive');
   const [selectedFrame, setSelectedFrame] = useState<string>('GEOPOLITICAL');
-
-  // Derive the active variant per type from the shared metric
-  const mapVariant = mapMetric === 'distinctive' ? 'distinctive' : 'absolute';
-  const guestVariant = mapMetric === 'distinctive' ? 'distinctive' : 'overall';
 
   useEffect(() => {
     loadDose().then(setDose);
     loadTopShowsByState('distinctive').then(setTopShowsDistinctive);
     loadTopShowsByState('absolute').then(setTopShowsAbsolute);
-    loadTopGuestsByState('overall').then(setTopGuestsOverall);
-    loadTopGuestsByState('distinctive').then(setTopGuestsDistinctive);
     loadTopGuestsByFrame().then(setTopGuestsByFrame);
   }, []);
 
   const topShows = mapVariant === 'distinctive' ? topShowsDistinctive : topShowsAbsolute;
-  const topGuests = guestVariant === 'overall' ? topGuestsOverall : topGuestsDistinctive;
-
-  const topGuestByState = useMemo(() => {
-    const m: Record<string, TopGuestByState> = {};
-    for (const r of topGuests) m[r.state] = r;
-    return m;
-  }, [topGuests]);
-
-  const guestShareRange = useMemo(() => {
-    if (!topGuests.length) return { min: 0, max: 1 };
-    const vals = topGuests.map(r => r.share_in_state);
-    return { min: Math.min(...vals), max: Math.max(...vals) };
-  }, [topGuests]);
 
   const topGuestPerFrameByState = useMemo(() => {
     const m: Record<string, TopGuestPerFrame> = {};
@@ -135,69 +113,44 @@ export default function Geography() {
 
   return (
     <div className="space-y-4">
-      {/* Unified tile-grid US map: top show OR top guest, by volume or distinctiveness */}
+      {/* Tile-grid US map: top show per state, distinctive vs largest-audience */}
       <div className="rounded-lg border border-stone-200 bg-white p-4">
         <div className="flex items-start justify-between gap-4 mb-1 flex-wrap">
           <h3 className="text-sm font-semibold text-stone-900">
-            Each state's top {mapType === 'shows' ? 'podcast' : 'carrier guest'}
+            Each state's top podcast
           </h3>
-          <div className="flex gap-2 shrink-0 text-xs">
-            <div className="flex rounded-md overflow-hidden border border-stone-300">
-              <button
-                onClick={() => setMapType('shows')}
-                className={`px-2.5 py-1 transition-colors ${
-                  mapType === 'shows'
-                    ? 'bg-stone-900 text-white'
-                    : 'bg-white text-stone-600 hover:bg-stone-100'
-                }`}
-              >
-                Shows
-              </button>
-              <button
-                onClick={() => setMapType('guests')}
-                className={`px-2.5 py-1 border-l border-stone-300 transition-colors ${
-                  mapType === 'guests'
-                    ? 'bg-stone-900 text-white'
-                    : 'bg-white text-stone-600 hover:bg-stone-100'
-                }`}
-              >
-                Guests
-              </button>
-            </div>
-            <div className="flex rounded-md overflow-hidden border border-stone-300">
-              <button
-                onClick={() => setMapMetric('distinctive')}
-                className={`px-2.5 py-1 transition-colors ${
-                  mapMetric === 'distinctive'
-                    ? 'bg-stone-900 text-white'
-                    : 'bg-white text-stone-600 hover:bg-stone-100'
-                }`}
-              >
-                Most distinctive
-              </button>
-              <button
-                onClick={() => setMapMetric('volume')}
-                className={`px-2.5 py-1 border-l border-stone-300 transition-colors ${
-                  mapMetric === 'volume'
-                    ? 'bg-stone-900 text-white'
-                    : 'bg-white text-stone-600 hover:bg-stone-100'
-                }`}
-              >
-                {mapType === 'shows' ? 'Largest audience' : 'Largest reach'}
-              </button>
-            </div>
+          <div className="flex rounded-md overflow-hidden border border-stone-300 shrink-0 text-xs">
+            <button
+              onClick={() => setMapVariant('distinctive')}
+              className={`px-2.5 py-1 transition-colors ${
+                mapVariant === 'distinctive'
+                  ? 'bg-stone-900 text-white'
+                  : 'bg-white text-stone-600 hover:bg-stone-100'
+              }`}
+            >
+              Most distinctive
+            </button>
+            <button
+              onClick={() => setMapVariant('absolute')}
+              className={`px-2.5 py-1 border-l border-stone-300 transition-colors ${
+                mapVariant === 'absolute'
+                  ? 'bg-stone-900 text-white'
+                  : 'bg-white text-stone-600 hover:bg-stone-100'
+              }`}
+            >
+              Largest audience
+            </button>
           </div>
         </div>
         <p className="text-xs text-stone-500 mt-0.5 mb-3 leading-relaxed">
-          {mapType === 'shows' && mapMetric === 'distinctive' && (
+          {mapVariant === 'distinctive' ? (
             <>
               For each state, the U.S.-majority podcast whose listeners are most
               disproportionately based there — surfaces small, locally concentrated
               shows. Tile shading scales with that state's share of the show's U.S.
               audience.
             </>
-          )}
-          {mapType === 'shows' && mapMetric === 'volume' && (
+          ) : (
             <>
               For each state, the U.S.-majority podcast with the most listeners in
               that state in absolute terms — surfaces big national shows. Tile
@@ -205,26 +158,10 @@ export default function Geography() {
               (large national shows often have a low share even when they're the
               top show).
             </>
-          )}
-          {mapType === 'guests' && mapMetric === 'distinctive' && (
-            <>
-              For each state, the carrier guest whose total reach is most
-              over-indexed there (highest share of their reach landing in this
-              state). Surfaces guests with locally concentrated footprints. Tile
-              shading scales with that share.
-            </>
-          )}
-          {mapType === 'guests' && mapMetric === 'volume' && (
-            <>
-              For each state, the carrier guest who reached that state most across
-              all their carrier appearances (sum of audience-share × show reach).
-              Tile shading scales with the share of <em>that guest's</em> total
-              reach landing in this state.
-            </>
           )}{' '}
-          Click a tile to filter the Explorer by that {mapType === 'shows' ? 'show' : 'guest'}.
+          Click a tile to filter the Explorer by that show.
         </p>
-        {(mapType === 'shows' ? topShows.length === 0 : topGuests.length === 0) ? (
+        {topShows.length === 0 ? (
           <div className="text-center py-12 text-stone-400 text-sm">Loading map...</div>
         ) : (
           <div className="space-y-1">
@@ -233,112 +170,57 @@ export default function Geography() {
                 {row.map((st, ci) => {
                   if (!st) return <div key={ci} />;
 
-                  if (mapType === 'shows') {
-                    const entry = topShowByState[st];
-                    if (!entry) {
-                      return (
-                        <div
-                          key={ci}
-                          className="rounded-sm border border-stone-200 bg-stone-50 aspect-[5/4] flex items-center justify-center text-[10px] font-mono text-stone-400"
-                        >
-                          {st}
-                        </div>
-                      );
-                    }
-                    const t = shareRange.max > shareRange.min
-                      ? (entry.state_share - shareRange.min) / (shareRange.max - shareRange.min)
-                      : 0.5;
-                    // Navy tint
-                    const alphaPct = Math.round(15 + t * 60);
-                    const bg = `rgba(30, 58, 95, ${alphaPct / 100})`;
-                    const textColor = t > 0.55 ? '#ffffff' : '#1f3550';
+                  const entry = topShowByState[st];
+                  if (!entry) {
                     return (
-                      <Link
+                      <div
                         key={ci}
-                        to={`/explorer?q=${encodeURIComponent(entry.top_show)}`}
-                        title={`${STATE_NAMES[st] || st}: ${entry.top_show} (${(entry.state_share * 100).toFixed(1)}% of show's US audience)`}
-                        className="relative rounded-sm border border-stone-200 aspect-[5/4] p-1 flex flex-col items-center justify-start hover:border-stone-400 transition-colors group overflow-hidden"
-                        style={{ backgroundColor: bg, color: textColor }}
+                        className="rounded-sm border border-stone-200 bg-stone-50 aspect-[5/4] flex items-center justify-center text-[10px] font-mono text-stone-400"
                       >
-                        <div className="absolute top-0.5 left-1 text-[9px] font-mono opacity-80 z-10">{st}</div>
-                        <div className="absolute top-0.5 right-1 text-[9px] font-mono tabular-nums opacity-80 z-10">{(entry.state_share * 100).toFixed(0)}%</div>
-                        <img
-                          src={`/show_logos/${showSlug(entry.top_show)}.jpg`}
-                          alt=""
-                          loading="lazy"
-                          onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
-                          className="rounded-sm object-cover bg-white/40 mt-3"
-                          style={{ width: '60%', aspectRatio: '1 / 1' }}
-                        />
-                        <div className="text-[9px] leading-tight font-medium text-center line-clamp-2 group-hover:underline decoration-1 underline-offset-2 mt-1 px-0.5">
-                          {entry.top_show}
-                        </div>
-                      </Link>
-                    );
-                  } else {
-                    const entry = topGuestByState[st];
-                    if (!entry) {
-                      return (
-                        <div
-                          key={ci}
-                          className="rounded-sm border border-stone-200 bg-stone-50 aspect-[5/4] flex items-center justify-center text-[10px] font-mono text-stone-400"
-                        >
-                          {st}
-                        </div>
-                      );
-                    }
-                    const t = guestShareRange.max > guestShareRange.min
-                      ? (entry.share_in_state - guestShareRange.min) / (guestShareRange.max - guestShareRange.min)
-                      : 0.5;
-                    // Plum tint to differentiate from the navy show view
-                    const alphaPct = Math.round(15 + t * 60);
-                    const bg = `rgba(95, 47, 95, ${alphaPct / 100})`;
-                    const textColor = t > 0.55 ? '#ffffff' : '#3a1f3a';
-                    // Initials badge as a visual stand-in for guest "art"
-                    const initials = entry.top_guest
-                      .split(/\s+/)
-                      .filter(Boolean)
-                      .map(w => w[0])
-                      .join('')
-                      .slice(0, 3)
-                      .toUpperCase();
-                    return (
-                      <Link
-                        key={ci}
-                        to={`/explorer?q=${encodeURIComponent(entry.top_guest)}`}
-                        title={`${STATE_NAMES[st] || st}: ${entry.top_guest} (${entry.n_events} events on ${entry.n_shows} shows; ${(entry.share_in_state * 100).toFixed(1)}% of guest's reach)`}
-                        className="relative rounded-sm border border-stone-200 aspect-[5/4] p-1 flex flex-col items-center justify-start hover:border-stone-400 transition-colors group overflow-hidden"
-                        style={{ backgroundColor: bg, color: textColor }}
-                      >
-                        <div className="absolute top-0.5 left-1 text-[9px] font-mono opacity-80 z-10">{st}</div>
-                        <div className="absolute top-0.5 right-1 text-[9px] font-mono tabular-nums opacity-80 z-10">{(entry.share_in_state * 100).toFixed(0)}%</div>
-                        <div
-                          className="rounded-full flex items-center justify-center mt-3 font-semibold"
-                          style={{
-                            width: '60%',
-                            aspectRatio: '1 / 1',
-                            backgroundColor: textColor === '#ffffff' ? 'rgba(255,255,255,0.18)' : 'rgba(95,47,95,0.12)',
-                            fontSize: '0.65rem',
-                            letterSpacing: '0.02em',
-                          }}
-                        >
-                          {initials}
-                        </div>
-                        <div className="text-[9px] leading-tight font-medium text-center line-clamp-2 group-hover:underline decoration-1 underline-offset-2 mt-1 px-0.5">
-                          {entry.top_guest}
-                        </div>
-                      </Link>
+                        {st}
+                      </div>
                     );
                   }
+                  const t = shareRange.max > shareRange.min
+                    ? (entry.state_share - shareRange.min) / (shareRange.max - shareRange.min)
+                    : 0.5;
+                  // Navy tint
+                  const alphaPct = Math.round(15 + t * 60);
+                  const bg = `rgba(30, 58, 95, ${alphaPct / 100})`;
+                  const textColor = t > 0.55 ? '#ffffff' : '#1f3550';
+                  return (
+                    <Link
+                      key={ci}
+                      to={`/explorer?q=${encodeURIComponent(entry.top_show)}`}
+                      title={`${STATE_NAMES[st] || st}: ${entry.top_show} (${(entry.state_share * 100).toFixed(1)}% of show's US audience)`}
+                      className="relative rounded-sm border border-stone-200 aspect-[5/4] p-1 flex flex-col items-center justify-start hover:border-stone-400 transition-colors group overflow-hidden"
+                      style={{ backgroundColor: bg, color: textColor }}
+                    >
+                      <div className="absolute top-0.5 left-1 text-[9px] font-mono opacity-80 z-10">{st}</div>
+                      <div className="absolute top-0.5 right-1 text-[9px] font-mono tabular-nums opacity-80 z-10">{(entry.state_share * 100).toFixed(0)}%</div>
+                      <img
+                        src={`/show_logos/${showSlug(entry.top_show)}.jpg`}
+                        alt=""
+                        loading="lazy"
+                        onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+                        className="rounded-sm object-cover bg-white/40 mt-3"
+                        style={{ width: '60%', aspectRatio: '1 / 1' }}
+                      />
+                      <div className="text-[9px] leading-tight font-medium text-center line-clamp-2 group-hover:underline decoration-1 underline-offset-2 mt-1 px-0.5">
+                        {entry.top_show}
+                      </div>
+                    </Link>
+                  );
                 })}
               </div>
             ))}
           </div>
         )}
         <p className="text-[11px] text-stone-400 mt-3 leading-relaxed">
-          {mapType === 'shows'
-            ? 'Toggle between Shows and Guests above. A high share means the show\'s audience (or the guest\'s reach) is concentrated in that state; a low share means it\'s a large national entity that still over-indexes there. Both kinds carry identifying variation for the shift-share design.'
-            : 'Toggle between Shows and Guests above. Guest reach is the sum of audience-share × show reach across the carrier\'s appearances; the same metric the carrier-IV uses to attribute exposure across states.'}
+          A high share means the show's U.S. audience is concentrated in that state
+          (small show, local audience). A low share means the show is large and
+          national but still over-indexes there. Both kinds carry identifying
+          variation for the shift-share design.
         </p>
       </div>
 
