@@ -135,16 +135,6 @@ export default function Geography() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h2 className="text-xl font-bold text-stone-900">Which states heard which stories?</h2>
-        <p className="text-sm text-stone-500 mt-1 leading-relaxed">
-          Different podcast shows have listeners in different states. When a
-          carrier guest appears on a show popular in California, California
-          hears more of that guest's typical inflation story than Wyoming does.
-          This geographic variation is what makes the causal estimates possible.
-        </p>
-      </div>
-
       {/* Unified tile-grid US map: top show OR top guest, by volume or distinctiveness */}
       <div className="rounded-lg border border-stone-200 bg-white p-5">
         <div className="flex items-start justify-between gap-4 mb-1 flex-wrap">
