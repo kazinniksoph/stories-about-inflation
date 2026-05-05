@@ -134,9 +134,9 @@ export default function Geography() {
   const color = FRAME_COLORS[selectedFrame];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Unified tile-grid US map: top show OR top guest, by volume or distinctiveness */}
-      <div className="rounded-lg border border-stone-200 bg-white p-5">
+      <div className="rounded-lg border border-stone-200 bg-white p-4">
         <div className="flex items-start justify-between gap-4 mb-1 flex-wrap">
           <h3 className="text-sm font-semibold text-stone-900">
             Each state's top {mapType === 'shows' ? 'podcast' : 'carrier guest'}
@@ -188,7 +188,7 @@ export default function Geography() {
             </div>
           </div>
         </div>
-        <p className="text-xs text-stone-500 mt-0.5 mb-4 leading-relaxed">
+        <p className="text-xs text-stone-500 mt-0.5 mb-3 leading-relaxed">
           {mapType === 'shows' && mapMetric === 'distinctive' && (
             <>
               For each state, the U.S.-majority podcast whose listeners are most
@@ -239,7 +239,7 @@ export default function Geography() {
                       return (
                         <div
                           key={ci}
-                          className="rounded-sm border border-stone-200 bg-stone-50 aspect-square flex items-center justify-center text-[10px] font-mono text-stone-400"
+                          className="rounded-sm border border-stone-200 bg-stone-50 aspect-[5/4] flex items-center justify-center text-[10px] font-mono text-stone-400"
                         >
                           {st}
                         </div>
@@ -257,7 +257,7 @@ export default function Geography() {
                         key={ci}
                         to={`/explorer?q=${encodeURIComponent(entry.top_show)}`}
                         title={`${STATE_NAMES[st] || st}: ${entry.top_show} (${(entry.state_share * 100).toFixed(1)}% of show's US audience)`}
-                        className="relative rounded-sm border border-stone-200 aspect-square p-1 flex flex-col items-center justify-start hover:border-stone-400 transition-colors group overflow-hidden"
+                        className="relative rounded-sm border border-stone-200 aspect-[5/4] p-1 flex flex-col items-center justify-start hover:border-stone-400 transition-colors group overflow-hidden"
                         style={{ backgroundColor: bg, color: textColor }}
                       >
                         <div className="absolute top-0.5 left-1 text-[9px] font-mono opacity-80 z-10">{st}</div>
@@ -281,7 +281,7 @@ export default function Geography() {
                       return (
                         <div
                           key={ci}
-                          className="rounded-sm border border-stone-200 bg-stone-50 aspect-square flex items-center justify-center text-[10px] font-mono text-stone-400"
+                          className="rounded-sm border border-stone-200 bg-stone-50 aspect-[5/4] flex items-center justify-center text-[10px] font-mono text-stone-400"
                         >
                           {st}
                         </div>
@@ -307,7 +307,7 @@ export default function Geography() {
                         key={ci}
                         to={`/explorer?q=${encodeURIComponent(entry.top_guest)}`}
                         title={`${STATE_NAMES[st] || st}: ${entry.top_guest} (${entry.n_events} events on ${entry.n_shows} shows; ${(entry.share_in_state * 100).toFixed(1)}% of guest's reach)`}
-                        className="relative rounded-sm border border-stone-200 aspect-square p-1 flex flex-col items-center justify-start hover:border-stone-400 transition-colors group overflow-hidden"
+                        className="relative rounded-sm border border-stone-200 aspect-[5/4] p-1 flex flex-col items-center justify-start hover:border-stone-400 transition-colors group overflow-hidden"
                         style={{ backgroundColor: bg, color: textColor }}
                       >
                         <div className="absolute top-0.5 left-1 text-[9px] font-mono opacity-80 z-10">{st}</div>
@@ -370,11 +370,11 @@ export default function Geography() {
       </div>
 
       {/* Per-frame heatmap on the same tile grid */}
-      <div className="rounded-lg border border-stone-200 bg-white p-5">
+      <div className="rounded-lg border border-stone-200 bg-white p-4">
         <h3 className="text-sm font-semibold text-stone-900 mb-1">
           {FRAME_LABELS[selectedFrame]} dose by state
         </h3>
-        <p className="text-xs text-stone-500 mt-0.5 mb-4 leading-relaxed">
+        <p className="text-xs text-stone-500 mt-0.5 mb-3 leading-relaxed">
           Each tile shades by that state's cumulative {FRAME_LABELS[selectedFrame].toLowerCase()} dose
           across the sample. Darker = more exposure. Hover for the exact value.
         </p>
@@ -391,7 +391,7 @@ export default function Geography() {
                     return (
                       <div
                         key={ci}
-                        className="rounded-sm border border-stone-200 bg-stone-50 aspect-[4/3] flex items-center justify-center text-[10px] font-mono text-stone-400"
+                        className="rounded-sm border border-stone-200 bg-stone-50 aspect-[5/3] flex items-center justify-center text-[10px] font-mono text-stone-400"
                       >
                         {st}
                       </div>
@@ -411,7 +411,7 @@ export default function Geography() {
                     <div
                       key={ci}
                       title={tooltip}
-                      className="rounded-sm border border-stone-200 aspect-[4/3] p-1 flex flex-col justify-between"
+                      className="rounded-sm border border-stone-200 aspect-[5/3] p-1 flex flex-col justify-between"
                       style={{ backgroundColor: bg, color: textColor }}
                     >
                       <div className="text-[10px] font-mono opacity-90">{st}</div>
