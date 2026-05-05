@@ -13,6 +13,7 @@ let showsCache: ShowSummary[] | null = null;
 let guestsCache: GuestSummary[] | null = null;
 let doseCache: StateMonthDose[] | null = null;
 let topShowsCache: TopShowByState[] | null = null;
+let topShowsAbsoluteCache: TopShowByState[] | null = null;
 
 async function fetchJson<T>(path: string): Promise<T> {
   const res = await fetch(path);
@@ -65,7 +66,15 @@ export async function loadDose(): Promise<StateMonthDose[]> {
   return doseCache!;
 }
 
-export async function loadTopShowsByState(): Promise<TopShowByState[]> {
+export async function loadTopShowsByState(
+  kind: 'distinctive' | 'absolute' = 'distinctive',
+): Promise<TopShowByState[]> {
+  if (kind === 'absolute') {
+    if (!topShowsAbsoluteCache) {
+      topShowsAbsoluteCache = await fetchJson('/data/top_show_per_state_absolute.json');
+    }
+    return topShowsAbsoluteCache!;
+  }
   if (!topShowsCache) topShowsCache = await fetchJson('/data/top_show_per_state.json');
   return topShowsCache!;
 }

@@ -38,13 +38,18 @@ function quantileColor(val: number, min: number, max: number, color: string): st
 
 export default function Geography() {
   const [dose, setDose] = useState<StateMonthDose[]>([]);
-  const [topShows, setTopShows] = useState<TopShowByState[]>([]);
+  const [topShowsDistinctive, setTopShowsDistinctive] = useState<TopShowByState[]>([]);
+  const [topShowsAbsolute, setTopShowsAbsolute] = useState<TopShowByState[]>([]);
+  const [mapVariant, setMapVariant] = useState<'distinctive' | 'absolute'>('distinctive');
   const [selectedFrame, setSelectedFrame] = useState<string>('GEOPOLITICAL');
 
   useEffect(() => {
     loadDose().then(setDose);
-    loadTopShowsByState().then(setTopShows);
+    loadTopShowsByState('distinctive').then(setTopShowsDistinctive);
+    loadTopShowsByState('absolute').then(setTopShowsAbsolute);
   }, []);
+
+  const topShows = mapVariant === 'distinctive' ? topShowsDistinctive : topShowsAbsolute;
 
   const topShowByState = useMemo(() => {
     const m: Record<string, TopShowByState> = {};
@@ -96,13 +101,52 @@ export default function Geography() {
         </p>
       </div>
 
-      {/* Tile-grid US map: per-state most-distinctive show */}
+      {/* Tile-grid US map: per-state top show (distinctive or absolute) */}
       <div className="rounded-lg border border-stone-200 bg-white p-5">
-        <h3 className="text-sm font-semibold text-stone-900">Each state's most distinctive show</h3>
+        <div className="flex items-start justify-between gap-4 mb-1">
+          <h3 className="text-sm font-semibold text-stone-900">
+            Each state's top podcast
+          </h3>
+          <div className="flex rounded-md overflow-hidden border border-stone-300 shrink-0 text-xs">
+            <button
+              onClick={() => setMapVariant('distinctive')}
+              className={`px-2.5 py-1 transition-colors ${
+                mapVariant === 'distinctive'
+                  ? 'bg-stone-900 text-white'
+                  : 'bg-white text-stone-600 hover:bg-stone-100'
+              }`}
+            >
+              Most distinctive
+            </button>
+            <button
+              onClick={() => setMapVariant('absolute')}
+              className={`px-2.5 py-1 border-l border-stone-300 transition-colors ${
+                mapVariant === 'absolute'
+                  ? 'bg-stone-900 text-white'
+                  : 'bg-white text-stone-600 hover:bg-stone-100'
+              }`}
+            >
+              Largest audience
+            </button>
+          </div>
+        </div>
         <p className="text-xs text-stone-500 mt-0.5 mb-4 leading-relaxed">
-          For each state, the U.S.-majority podcast whose listeners are most
-          disproportionately based there. Tile shading scales with that state's
-          share of the show's U.S. audience (darker = more concentrated).
+          {mapVariant === 'distinctive' ? (
+            <>
+              For each state, the U.S.-majority podcast whose listeners are most
+              disproportionately based there — surfaces small, locally concentrated
+              shows. Tile shading scales with that state's share of the show's U.S.
+              audience.
+            </>
+          ) : (
+            <>
+              For each state, the U.S.-majority podcast with the most listeners in
+              that state in absolute terms — surfaces big national shows. Tile
+              shading scales with that state's share of the show's U.S. audience
+              (large national shows often have a low share even when they're the
+              top show).
+            </>
+          )}{' '}
           Click a tile to filter the Explorer by that show's appearances.
         </p>
         {topShows.length === 0 ? (
@@ -188,56 +232,80 @@ export default function Geography() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="rounded-lg border border-stone-200 bg-white p-5">
-          <h3 className="text-sm font-semibold text-stone-900 mb-3">
-            Top 15 States: {FRAME_LABELS[selectedFrame]} Dose
-          </h3>
-          <div className="space-y-1.5">
-            {stateAgg.slice(0, 15).map(s => {
-              const pct = maxVal > 0 ? Math.max(0, s.cumDose) / maxVal : 0;
-              return (
-                <div key={s.state} className="flex items-center gap-2">
-                  <div className="w-6 text-xs font-mono text-stone-500 text-right">{s.state}</div>
-                  <div className="flex-1 h-5 bg-stone-100 rounded overflow-hidden">
-                    <div
-                      className="h-full rounded transition-all"
-                      style={{ width: `${pct * 100}%`, backgroundColor: color }}
-                    />
-                  </div>
-                  <div className="w-20 text-right text-xs font-mono text-stone-600">
-                    {s.cumDose.toFixed(4)}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        <div className="rounded-lg border border-stone-200 bg-white p-5">
-          <h3 className="text-sm font-semibold text-stone-900 mb-3">
-            Bottom 15 States: {FRAME_LABELS[selectedFrame]} Dose
-          </h3>
-          <div className="space-y-1.5">
-            {stateAgg.slice(-15).reverse().map(s => {
-              const pct = minVal < 0 ? Math.max(0, Math.abs(s.cumDose)) / Math.abs(minVal) : 0;
-              return (
-                <div key={s.state} className="flex items-center gap-2">
-                  <div className="w-6 text-xs font-mono text-stone-500 text-right">{s.state}</div>
-                  <div className="flex-1 h-5 bg-stone-100 rounded overflow-hidden flex justify-end">
-                    {s.cumDose < 0 && (
+      {/* Per-frame heatmap on the same tile grid */}
+      <div className="rounded-lg border border-stone-200 bg-white p-5">
+        <h3 className="text-sm font-semibold text-stone-900 mb-1">
+          {FRAME_LABELS[selectedFrame]} dose by state
+        </h3>
+        <p className="text-xs text-stone-500 mt-0.5 mb-4 leading-relaxed">
+          Each tile shades by that state's cumulative {FRAME_LABELS[selectedFrame].toLowerCase()} dose
+          across the sample. Darker = more exposure. Hover for the exact value.
+        </p>
+        <div className="space-y-1">
+          {TILE_GRID.map((row, ri) => {
+            const stateMap: Record<string, { cumDose: number; name: string }> = {};
+            for (const s of stateAgg) stateMap[s.state] = { cumDose: s.cumDose, name: s.name };
+            return (
+              <div key={ri} className="grid grid-cols-11 gap-1">
+                {row.map((st, ci) => {
+                  if (!st) return <div key={ci} />;
+                  const entry = stateMap[st];
+                  if (!entry) {
+                    return (
                       <div
-                        className="h-full rounded transition-all"
-                        style={{ width: `${pct * 100}%`, backgroundColor: '#9ca3af' }}
-                      />
-                    )}
-                  </div>
-                  <div className="w-20 text-right text-xs font-mono text-stone-600">
-                    {s.cumDose.toFixed(4)}
-                  </div>
+                        key={ci}
+                        className="rounded-sm border border-stone-200 bg-stone-50 aspect-[4/3] flex items-center justify-center text-[10px] font-mono text-stone-400"
+                      >
+                        {st}
+                      </div>
+                    );
+                  }
+                  // Normalize using the positive max so all frame heatmaps
+                  // compare consistently (negative values render as faint).
+                  const t = maxVal > 0 ? Math.max(0, entry.cumDose) / maxVal : 0;
+                  const alphaPct = entry.cumDose <= 0 ? 8 : Math.round(15 + t * 70);
+                  const bg = `${color}${alphaPct.toString(16).padStart(2, '0')}`;
+                  const textColor = t > 0.55 ? '#ffffff' : '#1f3550';
+                  return (
+                    <div
+                      key={ci}
+                      title={`${entry.name}: ${entry.cumDose.toFixed(4)}`}
+                      className="rounded-sm border border-stone-200 aspect-[4/3] p-1 flex flex-col justify-between"
+                      style={{ backgroundColor: bg, color: textColor }}
+                    >
+                      <div className="text-[10px] font-mono opacity-90">{st}</div>
+                      <div className="text-[9px] font-mono tabular-nums opacity-80 text-right">
+                        {entry.cumDose >= 0 ? '+' : ''}{entry.cumDose.toFixed(3)}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
+        </div>
+        <div className="mt-4 pt-3 border-t border-stone-100 grid grid-cols-2 gap-4 text-xs">
+          <div>
+            <div className="text-stone-400 uppercase tracking-wide text-[10px] mb-1">Top 3</div>
+            <div className="space-y-0.5">
+              {stateAgg.slice(0, 3).map(s => (
+                <div key={s.state} className="flex justify-between font-mono">
+                  <span className="text-stone-700">{s.state} <span className="text-stone-400 text-[11px]">{s.name}</span></span>
+                  <span className="text-stone-600 tabular-nums">{s.cumDose.toFixed(4)}</span>
                 </div>
-              );
-            })}
+              ))}
+            </div>
+          </div>
+          <div>
+            <div className="text-stone-400 uppercase tracking-wide text-[10px] mb-1">Bottom 3</div>
+            <div className="space-y-0.5">
+              {stateAgg.slice(-3).reverse().map(s => (
+                <div key={s.state} className="flex justify-between font-mono">
+                  <span className="text-stone-700">{s.state} <span className="text-stone-400 text-[11px]">{s.name}</span></span>
+                  <span className="text-stone-600 tabular-nums">{s.cumDose.toFixed(4)}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

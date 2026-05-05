@@ -1,0 +1,308 @@
+[
+  {
+    "state": "AK",
+    "top_show": "Distractible",
+    "state_share": 0.10042134831460674,
+    "state_count": 286
+  },
+  {
+    "state": "AL",
+    "top_show": "Weird Darkness: Paranormal & True Crime Stories",
+    "state_share": 0.21217197096594081,
+    "state_count": 760
+  },
+  {
+    "state": "AR",
+    "top_show": "Morning Wire",
+    "state_share": 0.02308923906631836,
+    "state_count": 274
+  },
+  {
+    "state": "AZ",
+    "top_show": "Holmberg's Morning Sickness - Arizona",
+    "state_share": 0.7138914443422263,
+    "state_count": 776
+  },
+  {
+    "state": "CA",
+    "top_show": "Armstrong & Getty On Demand",
+    "state_share": 0.6157872870793519,
+    "state_count": 7411
+  },
+  {
+    "state": "CO",
+    "top_show": "The Bill Simmons Podcast",
+    "state_share": 0.04462015503875969,
+    "state_count": 1439
+  },
+  {
+    "state": "CT",
+    "top_show": "The Daily",
+    "state_share": 0.01705054551204343,
+    "state_count": 647
+  },
+  {
+    "state": "DC",
+    "top_show": "CBS News: On The Hour",
+    "state_share": 0.45595854922279794,
+    "state_count": 1672
+  },
+  {
+    "state": "DE",
+    "top_show": "The Howie Carr Radio Network",
+    "state_share": 0.18149210903873744,
+    "state_count": 506
+  },
+  {
+    "state": "FL",
+    "top_show": "The Dan Le Batard Show with Stugotz",
+    "state_share": 0.13589511008493443,
+    "state_count": 3296
+  },
+  {
+    "state": "GA",
+    "top_show": "My Brother, My Brother And Me",
+    "state_share": 0.0804322792098503,
+    "state_count": 908
+  },
+  {
+    "state": "HI",
+    "top_show": "The Dan Patrick Show",
+    "state_share": 0.054176401869158876,
+    "state_count": 371
+  },
+  {
+    "state": "IA",
+    "top_show": "Stuff You Should Know",
+    "state_share": 0.031059424195149624,
+    "state_count": 1095
+  },
+  {
+    "state": "ID",
+    "top_show": "Morning Wire",
+    "state_share": 0.019634279935956855,
+    "state_count": 233
+  },
+  {
+    "state": "IL",
+    "top_show": "Stuff You Should Know",
+    "state_share": 0.07771947241526024,
+    "state_count": 2740
+  },
+  {
+    "state": "IN",
+    "top_show": "Stuff You Should Know",
+    "state_share": 0.027457098283931357,
+    "state_count": 968
+  },
+  {
+    "state": "KS",
+    "top_show": "Todd N Tyler Radio Empire",
+    "state_share": 0.3232407600751723,
+    "state_count": 1548
+  },
+  {
+    "state": "KY",
+    "top_show": "The John Batchelor Show",
+    "state_share": 0.13053097345132744,
+    "state_count": 1475
+  },
+  {
+    "state": "LA",
+    "top_show": "KiddNation Podcast",
+    "state_share": 0.27209944751381215,
+    "state_count": 394
+  },
+  {
+    "state": "MA",
+    "top_show": "Stuff You Should Know",
+    "state_share": 0.04458941994043398,
+    "state_count": 1572
+  },
+  {
+    "state": "MD",
+    "top_show": "The Daily",
+    "state_share": 0.042007062668001895,
+    "state_count": 1594
+  },
+  {
+    "state": "ME",
+    "top_show": "The Bill Simmons Podcast",
+    "state_share": 0.007348837209302326,
+    "state_count": 237
+  },
+  {
+    "state": "MI",
+    "top_show": "The Drew Lane Show",
+    "state_share": 0.8348093954562957,
+    "state_count": 2168
+  },
+  {
+    "state": "MN",
+    "top_show": "Garage Logic",
+    "state_share": 0.7132777421423989,
+    "state_count": 2224
+  },
+  {
+    "state": "MO",
+    "top_show": "The Dave Glover Show",
+    "state_share": 0.8121495327102803,
+    "state_count": 869
+  },
+  {
+    "state": "MS",
+    "top_show": "Morning Wire",
+    "state_share": 0.020476952894581613,
+    "state_count": 243
+  },
+  {
+    "state": "MT",
+    "top_show": "The Dan Le Batard Show with Stugotz",
+    "state_share": 0.02222313845138946,
+    "state_count": 539
+  },
+  {
+    "state": "NC",
+    "top_show": "The Daily",
+    "state_share": 0.04553839666895061,
+    "state_count": 1728
+  },
+  {
+    "state": "ND",
+    "top_show": "rSlash",
+    "state_share": 0.08272594752186589,
+    "state_count": 227
+  },
+  {
+    "state": "NE",
+    "top_show": "Todd N Tyler Radio Empire",
+    "state_share": 0.3579035289204427,
+    "state_count": 1714
+  },
+  {
+    "state": "NH",
+    "top_show": "The Bill Simmons Podcast",
+    "state_share": 0.0077829457364341085,
+    "state_count": 251
+  },
+  {
+    "state": "NJ",
+    "top_show": "The Bill Simmons Podcast",
+    "state_share": 0.03407751937984496,
+    "state_count": 1099
+  },
+  {
+    "state": "NM",
+    "top_show": "The John Batchelor Show",
+    "state_share": 0.04336283185840708,
+    "state_count": 490
+  },
+  {
+    "state": "NV",
+    "top_show": "Adam Carolla Show",
+    "state_share": 0.022808367732456446,
+    "state_count": 326
+  },
+  {
+    "state": "NY",
+    "top_show": "The Daily",
+    "state_share": 0.10483318399831339,
+    "state_count": 3978
+  },
+  {
+    "state": "OH",
+    "top_show": "The Dan Le Batard Show with Stugotz",
+    "state_share": 0.061103323163189574,
+    "state_count": 1482
+  },
+  {
+    "state": "OK",
+    "top_show": "Todd N Tyler Radio Empire",
+    "state_share": 0.14053038212570473,
+    "state_count": 673
+  },
+  {
+    "state": "OR",
+    "top_show": "The Daily",
+    "state_share": 0.030780582933642546,
+    "state_count": 1168
+  },
+  {
+    "state": "PA",
+    "top_show": "The Dan Le Batard Show with Stugotz",
+    "state_share": 0.07940958192463099,
+    "state_count": 1926
+  },
+  {
+    "state": "RI",
+    "top_show": "Jim Cornette Experience",
+    "state_share": 0.041946972694895134,
+    "state_count": 318
+  },
+  {
+    "state": "SC",
+    "top_show": "Distractible",
+    "state_share": 0.12605337078651685,
+    "state_count": 359
+  },
+  {
+    "state": "SD",
+    "top_show": "The Herd with Colin Cowherd",
+    "state_share": 0.08118466898954704,
+    "state_count": 932
+  },
+  {
+    "state": "TN",
+    "top_show": "The Alex Jones Show - Infowars.com",
+    "state_share": 0.055094513600737666,
+    "state_count": 717
+  },
+  {
+    "state": "TX",
+    "top_show": "Mornings with Matt and Bob",
+    "state_share": 0.7363694676074407,
+    "state_count": 2296
+  },
+  {
+    "state": "UT",
+    "top_show": "The Glenn Beck Program",
+    "state_share": 0.06450189711462102,
+    "state_count": 731
+  },
+  {
+    "state": "VA",
+    "top_show": "The Daily",
+    "state_share": 0.0425341274442629,
+    "state_count": 1614
+  },
+  {
+    "state": "VT",
+    "top_show": "Stuff You Missed in History Class",
+    "state_share": 0.023172479694218824,
+    "state_count": 194
+  },
+  {
+    "state": "WA",
+    "top_show": "The Daily",
+    "state_share": 0.06071786222526748,
+    "state_count": 2304
+  },
+  {
+    "state": "WI",
+    "top_show": "The Dan Le Batard Show with Stugotz",
+    "state_share": 0.05372309722107694,
+    "state_count": 1303
+  },
+  {
+    "state": "WV",
+    "top_show": "The Jesse Kelly Show",
+    "state_share": 0.03757875787578758,
+    "state_count": 167
+  },
+  {
+    "state": "WY",
+    "top_show": "The Megyn Kelly Show",
+    "state_share": 0.013905980802362786,
+    "state_count": 226
+  }
+]
