@@ -4,6 +4,7 @@ import type {
   ShowSummary,
   GuestSummary,
   StateMonthDose,
+  TopShowByState,
 } from '../types';
 
 let eventsCache: InjectionEvent[] | null = null;
@@ -11,6 +12,7 @@ let sharesCache: MonthlyFrameShares | null = null;
 let showsCache: ShowSummary[] | null = null;
 let guestsCache: GuestSummary[] | null = null;
 let doseCache: StateMonthDose[] | null = null;
+let topShowsCache: TopShowByState[] | null = null;
 
 async function fetchJson<T>(path: string): Promise<T> {
   const res = await fetch(path);
@@ -61,4 +63,9 @@ export async function loadGuests(): Promise<GuestSummary[]> {
 export async function loadDose(): Promise<StateMonthDose[]> {
   if (!doseCache) doseCache = await fetchJson('/data/state_month_dose.json');
   return doseCache!;
+}
+
+export async function loadTopShowsByState(): Promise<TopShowByState[]> {
+  if (!topShowsCache) topShowsCache = await fetchJson('/data/top_show_per_state.json');
+  return topShowsCache!;
 }

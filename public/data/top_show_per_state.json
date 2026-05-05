@@ -1,0 +1,308 @@
+[
+  {
+    "state": "AK",
+    "top_show": "Distractible",
+    "state_share": 0.10042134831460674,
+    "state_count": 286
+  },
+  {
+    "state": "AL",
+    "top_show": "The Rick Burgess Show",
+    "state_share": 0.5715725806451613,
+    "state_count": 567
+  },
+  {
+    "state": "AR",
+    "top_show": "The Walton & Johnson Show",
+    "state_share": 0.09213051823416507,
+    "state_count": 48
+  },
+  {
+    "state": "AZ",
+    "top_show": "Holmberg's Morning Sickness - Arizona",
+    "state_share": 0.7138914443422263,
+    "state_count": 776
+  },
+  {
+    "state": "CA",
+    "top_show": "KNBR Podcast",
+    "state_share": 0.8856325947105075,
+    "state_count": 1239
+  },
+  {
+    "state": "CO",
+    "top_show": "Reality Gays with Mattie and Poodle",
+    "state_share": 0.29038112522686027,
+    "state_count": 160
+  },
+  {
+    "state": "CT",
+    "top_show": "Citation Needed",
+    "state_share": 0.2395128552097429,
+    "state_count": 177
+  },
+  {
+    "state": "DC",
+    "top_show": "Headline News from The Associated Press",
+    "state_share": 0.589375,
+    "state_count": 943
+  },
+  {
+    "state": "DE",
+    "top_show": "DK Pittsburgh Sports: Daily podcasts on Steelers, Penguins, Pirates!",
+    "state_share": 0.27929515418502204,
+    "state_count": 317
+  },
+  {
+    "state": "FL",
+    "top_show": "Real Crime Profile",
+    "state_share": 0.5696428571428571,
+    "state_count": 319
+  },
+  {
+    "state": "GA",
+    "top_show": "Catholic Answers Live",
+    "state_share": 0.6068515497553018,
+    "state_count": 372
+  },
+  {
+    "state": "HI",
+    "top_show": "This Paranormal Life",
+    "state_share": 0.2714285714285714,
+    "state_count": 152
+  },
+  {
+    "state": "IA",
+    "top_show": "Iowa Everywhere",
+    "state_share": 0.5179340028694405,
+    "state_count": 361
+  },
+  {
+    "state": "ID",
+    "top_show": "Second Date Update Podcasts",
+    "state_share": 0.1490787269681742,
+    "state_count": 89
+  },
+  {
+    "state": "IL",
+    "top_show": "Boring History for Sleep",
+    "state_share": 0.30275229357798167,
+    "state_count": 231
+  },
+  {
+    "state": "IN",
+    "top_show": "100% Eat",
+    "state_share": 0.17162471395881007,
+    "state_count": 150
+  },
+  {
+    "state": "KS",
+    "top_show": "Todd N Tyler Radio Empire",
+    "state_share": 0.3232407600751723,
+    "state_count": 1548
+  },
+  {
+    "state": "KY",
+    "top_show": "KSR",
+    "state_share": 0.4190585533869116,
+    "state_count": 730
+  },
+  {
+    "state": "LA",
+    "top_show": "KiddNation Podcast",
+    "state_share": 0.27209944751381215,
+    "state_count": 394
+  },
+  {
+    "state": "MA",
+    "top_show": "Toucher & Hardy",
+    "state_share": 0.5811103100216294,
+    "state_count": 806
+  },
+  {
+    "state": "MD",
+    "top_show": "The Sports Junkies",
+    "state_share": 0.34963325183374083,
+    "state_count": 858
+  },
+  {
+    "state": "ME",
+    "top_show": "Necronomipod",
+    "state_share": 0.13056379821958458,
+    "state_count": 88
+  },
+  {
+    "state": "MI",
+    "top_show": "The Drew Lane Show",
+    "state_share": 0.8348093954562957,
+    "state_count": 2168
+  },
+  {
+    "state": "MN",
+    "top_show": "93X Half-Assed Morning Show",
+    "state_share": 0.8042086001829826,
+    "state_count": 1758
+  },
+  {
+    "state": "MO",
+    "top_show": "The Dave Glover Show",
+    "state_share": 0.8121495327102803,
+    "state_count": 869
+  },
+  {
+    "state": "MS",
+    "top_show": "Straight White American Jesus",
+    "state_share": 0.10407239819004525,
+    "state_count": 69
+  },
+  {
+    "state": "MT",
+    "top_show": "The Rich Roll Podcast",
+    "state_share": 0.07857911733046287,
+    "state_count": 73
+  },
+  {
+    "state": "NC",
+    "top_show": "Ear Biscuits with Rhett & Link",
+    "state_share": 0.7572327044025158,
+    "state_count": 602
+  },
+  {
+    "state": "ND",
+    "top_show": "Reddit On Wiki",
+    "state_share": 0.09932279909706546,
+    "state_count": 88
+  },
+  {
+    "state": "NE",
+    "top_show": "Todd N Tyler Radio Empire",
+    "state_share": 0.3579035289204427,
+    "state_count": 1714
+  },
+  {
+    "state": "NH",
+    "top_show": "Turley Talks",
+    "state_share": 0.14754098360655737,
+    "state_count": 117
+  },
+  {
+    "state": "NJ",
+    "top_show": "Michigan Insider",
+    "state_share": 0.4239226033421284,
+    "state_count": 482
+  },
+  {
+    "state": "NM",
+    "top_show": "Killer Stories with Harvey Guill\u00e9n",
+    "state_share": 0.11465603190428714,
+    "state_count": 115
+  },
+  {
+    "state": "NV",
+    "top_show": "Next Level Soul Podcast with Alex Ferrari",
+    "state_share": 0.2522202486678508,
+    "state_count": 142
+  },
+  {
+    "state": "NY",
+    "top_show": "Notsam Wrestling",
+    "state_share": 0.49515287099179717,
+    "state_count": 664
+  },
+  {
+    "state": "OH",
+    "top_show": "Boomer & Gio",
+    "state_share": 0.47689463955637706,
+    "state_count": 258
+  },
+  {
+    "state": "OK",
+    "top_show": "2 Pros and a Cup of Joe",
+    "state_share": 0.17906976744186046,
+    "state_count": 308
+  },
+  {
+    "state": "OR",
+    "top_show": "Markley, van Camp and Robbins",
+    "state_share": 0.3897707231040564,
+    "state_count": 221
+  },
+  {
+    "state": "PA",
+    "top_show": "US News Today | 2 Min News | The Daily News Now!",
+    "state_share": 0.6930946291560103,
+    "state_count": 542
+  },
+  {
+    "state": "RI",
+    "top_show": "The Mike O'Meara Show",
+    "state_share": 0.11949685534591195,
+    "state_count": 114
+  },
+  {
+    "state": "SC",
+    "top_show": "Going In Raw: A Pro Wrestling Podcast",
+    "state_share": 0.3634651600753296,
+    "state_count": 193
+  },
+  {
+    "state": "SD",
+    "top_show": "Bellied Up",
+    "state_share": 0.1189083820662768,
+    "state_count": 61
+  },
+  {
+    "state": "TN",
+    "top_show": "Squawk on the Street",
+    "state_share": 0.1814621409921671,
+    "state_count": 139
+  },
+  {
+    "state": "TX",
+    "top_show": "The Ticket Top 10",
+    "state_share": 0.8308144416456759,
+    "state_count": 1979
+  },
+  {
+    "state": "UT",
+    "top_show": "Sarah and Vinnie Full Show",
+    "state_share": 0.44770642201834865,
+    "state_count": 244
+  },
+  {
+    "state": "VA",
+    "top_show": "Latest Stories from The Associated Press",
+    "state_share": 0.5119842829076621,
+    "state_count": 1303
+  },
+  {
+    "state": "VT",
+    "top_show": "Gilbert Gottfried's Amazing Colossal Podcast",
+    "state_share": 0.16076294277929154,
+    "state_count": 118
+  },
+  {
+    "state": "WA",
+    "top_show": "The Mens Room Daily Podcast",
+    "state_share": 0.6703146374829001,
+    "state_count": 490
+  },
+  {
+    "state": "WI",
+    "top_show": "Story Pirates",
+    "state_share": 0.4826446280991736,
+    "state_count": 292
+  },
+  {
+    "state": "WV",
+    "top_show": "Insight for Living Daily Broadcast",
+    "state_share": 0.28654970760233917,
+    "state_count": 147
+  },
+  {
+    "state": "WY",
+    "top_show": "Killer Psyche",
+    "state_share": 0.07436708860759493,
+    "state_count": 47
+  }
+]

@@ -52,6 +52,13 @@ export interface GuestSummary {
   shows: string[];
 }
 
+export interface TopShowByState {
+  state: string;
+  top_show: string;
+  state_share: number;
+  state_count: number;
+}
+
 export interface StateMonthDose {
   state: string;
   year_month: string;
