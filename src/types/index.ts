@@ -59,6 +59,23 @@ export interface TopShowByState {
   state_count: number;
 }
 
+export interface TopGuestByState {
+  state: string;
+  top_guest: string;
+  total_reach: number;
+  share_in_state: number;
+  n_shows: number;
+  n_events: number;
+}
+
+export interface TopGuestPerFrame {
+  state: string;
+  top_guest: string;
+  frame_contrib: number;
+  n_shows: number;
+  n_events: number;
+}
+
 export interface StateMonthDose {
   state: string;
   year_month: string;

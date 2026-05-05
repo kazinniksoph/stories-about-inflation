@@ -1,0 +1,410 @@
+[
+  {
+    "state": "AL",
+    "top_guest": "Jeff Clark",
+    "share_in_state": 0.3581081081081081,
+    "total_reach": 53.0,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "AK",
+    "top_guest": "Jared Huffman",
+    "share_in_state": 0.2179268171915231,
+    "total_reach": 28.766339869281047,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "AZ",
+    "top_guest": "Art Del Cueto",
+    "share_in_state": 0.2829341317365269,
+    "total_reach": 94.5,
+    "n_shows": 4,
+    "n_events": 6
+  },
+  {
+    "state": "AR",
+    "top_guest": "Andy Ngo",
+    "share_in_state": 0.10000000000000002,
+    "total_reach": 11.600000000000001,
+    "n_shows": 4,
+    "n_events": 4
+  },
+  {
+    "state": "CA",
+    "top_guest": "Michael Zuber",
+    "share_in_state": 0.5996586399538749,
+    "total_reach": 256.65389790025847,
+    "n_shows": 3,
+    "n_events": 6
+  },
+  {
+    "state": "CO",
+    "top_guest": "Kyle Clark",
+    "share_in_state": 0.3247619047619048,
+    "total_reach": 68.2,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "CT",
+    "top_guest": "Elena",
+    "share_in_state": 0.43503879665806494,
+    "total_reach": 114.85024231772914,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "DE",
+    "top_guest": "Bill Nygren",
+    "share_in_state": 0.12509347011110372,
+    "total_reach": 18.764020516665564,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "FL",
+    "top_guest": "Igor",
+    "share_in_state": 0.4841370277449823,
+    "total_reach": 85.20811688311689,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "GA",
+    "top_guest": "Jimmy Song",
+    "share_in_state": 0.27015148092238667,
+    "total_reach": 91.31120055176669,
+    "n_shows": 5,
+    "n_events": 5
+  },
+  {
+    "state": "HI",
+    "top_guest": "Eric Blanc",
+    "share_in_state": 0.05426630819300975,
+    "total_reach": 10.364864864864865,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "ID",
+    "top_guest": "Roger Marshall",
+    "share_in_state": 0.3710317460317459,
+    "total_reach": 41.55555555555556,
+    "n_shows": 3,
+    "n_events": 4
+  },
+  {
+    "state": "IL",
+    "top_guest": "Mel K",
+    "share_in_state": 0.6144578313253012,
+    "total_reach": 102.0,
+    "n_shows": 3,
+    "n_events": 4
+  },
+  {
+    "state": "IN",
+    "top_guest": "Quinn Slobodian",
+    "share_in_state": 0.2593787328149938,
+    "total_reach": 49.54133796766383,
+    "n_shows": 5,
+    "n_events": 5
+  },
+  {
+    "state": "IA",
+    "top_guest": "Ryan Gerdusky",
+    "share_in_state": 0.2003960123561319,
+    "total_reach": 102.20196630162727,
+    "n_shows": 4,
+    "n_events": 6
+  },
+  {
+    "state": "KS",
+    "top_guest": "Bruce",
+    "share_in_state": 0.31081190051879465,
+    "total_reach": 62.784003904796506,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "KY",
+    "top_guest": "Craig Unger",
+    "share_in_state": 0.16957795004306636,
+    "total_reach": 22.893023255813954,
+    "n_shows": 4,
+    "n_events": 4
+  },
+  {
+    "state": "LA",
+    "top_guest": "Eddie Speed",
+    "share_in_state": 0.15897435897435902,
+    "total_reach": 24.8,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "ME",
+    "top_guest": "Vinny",
+    "share_in_state": 0.12752613240418115,
+    "total_reach": 17.853658536585364,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "MD",
+    "top_guest": "Errol Lewis",
+    "share_in_state": 0.42113821138211377,
+    "total_reach": 88.4390243902439,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "MA",
+    "top_guest": "Whitney Webb",
+    "share_in_state": 0.5413885746606336,
+    "total_reach": 92.0360576923077,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "MI",
+    "top_guest": "Ted Nugent",
+    "share_in_state": 0.32260843091682695,
+    "total_reach": 44.19735503560529,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "MN",
+    "top_guest": "Jonathan Clements",
+    "share_in_state": 0.29766111913124804,
+    "total_reach": 48.51876241839342,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "MS",
+    "top_guest": "Vinny Lingham",
+    "share_in_state": 0.10757575757575757,
+    "total_reach": 22.59090909090909,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "MO",
+    "top_guest": "Justin Pearson",
+    "share_in_state": 0.23461538461538461,
+    "total_reach": 61.0,
+    "n_shows": 3,
+    "n_events": 4
+  },
+  {
+    "state": "MT",
+    "top_guest": "Sahil Bloom",
+    "share_in_state": 0.10594588179444579,
+    "total_reach": 69.9242819843342,
+    "n_shows": 8,
+    "n_events": 8
+  },
+  {
+    "state": "NE",
+    "top_guest": "Stuart Rhodes",
+    "share_in_state": 0.3570594748797936,
+    "total_reach": 38.20536381213791,
+    "n_shows": 3,
+    "n_events": 4
+  },
+  {
+    "state": "NV",
+    "top_guest": "Art Del Cueto",
+    "share_in_state": 0.19192864271457083,
+    "total_reach": 64.10416666666667,
+    "n_shows": 4,
+    "n_events": 6
+  },
+  {
+    "state": "NH",
+    "top_guest": "Courtney",
+    "share_in_state": 0.07701421800947868,
+    "total_reach": 16.25,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "NJ",
+    "top_guest": "Paul Dans",
+    "share_in_state": 0.7088123780032907,
+    "total_reach": 55.28736548425668,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "NM",
+    "top_guest": "Jason Bermas",
+    "share_in_state": 0.08180627521681588,
+    "total_reach": 10.962040879053328,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "NY",
+    "top_guest": "Dr. Peter Hotez",
+    "share_in_state": 0.7934303534303534,
+    "total_reach": 154.71891891891892,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "NC",
+    "top_guest": "Senator Ruben Gallego",
+    "share_in_state": 0.37222207217058734,
+    "total_reach": 32.75554235101166,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "ND",
+    "top_guest": "Neal Bawa",
+    "share_in_state": 0.25480769230769235,
+    "total_reach": 53.0,
+    "n_shows": 4,
+    "n_events": 4
+  },
+  {
+    "state": "OH",
+    "top_guest": "Joyce Vance",
+    "share_in_state": 0.6583616021002591,
+    "total_reach": 175.12418615866892,
+    "n_shows": 3,
+    "n_events": 4
+  },
+  {
+    "state": "OK",
+    "top_guest": "Susie Wiles",
+    "share_in_state": 0.1532149009037076,
+    "total_reach": 27.27225236085995,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "OR",
+    "top_guest": "Andy Ngo",
+    "share_in_state": 0.4741379310344828,
+    "total_reach": 55.0,
+    "n_shows": 4,
+    "n_events": 4
+  },
+  {
+    "state": "PA",
+    "top_guest": "Tom Renz",
+    "share_in_state": 0.5303993839263549,
+    "total_reach": 48.26634393729829,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "RI",
+    "top_guest": "Dan Morgan",
+    "share_in_state": 0.09331479720006824,
+    "total_reach": 64.57383966244726,
+    "n_shows": 6,
+    "n_events": 9
+  },
+  {
+    "state": "SC",
+    "top_guest": "Rick Wilson",
+    "share_in_state": 0.24053641147513152,
+    "total_reach": 65.90697674418604,
+    "n_shows": 4,
+    "n_events": 7
+  },
+  {
+    "state": "SD",
+    "top_guest": "Evan Ratliff",
+    "share_in_state": 0.17201341704652964,
+    "total_reach": 39.735099337748345,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "TN",
+    "top_guest": "Willy Woo",
+    "share_in_state": 0.4558501187872621,
+    "total_reach": 46.040861997513474,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "TX",
+    "top_guest": "American HODL",
+    "share_in_state": 0.6026262113130285,
+    "total_reach": 99.43332486664973,
+    "n_shows": 3,
+    "n_events": 4
+  },
+  {
+    "state": "UT",
+    "top_guest": "Mitch Landrieu",
+    "share_in_state": 0.5784892906700373,
+    "total_reach": 82.72396856581533,
+    "n_shows": 3,
+    "n_events": 4
+  },
+  {
+    "state": "VT",
+    "top_guest": "Nick Gillespie",
+    "share_in_state": 0.08287851222963413,
+    "total_reach": 25.36082474226804,
+    "n_shows": 3,
+    "n_events": 4
+  },
+  {
+    "state": "VA",
+    "top_guest": "Mel Kay",
+    "share_in_state": 0.4405594405594406,
+    "total_reach": 63.0,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "WA",
+    "top_guest": "Emad Mostaque",
+    "share_in_state": 0.517067346961215,
+    "total_reach": 82.21370816683317,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "WV",
+    "top_guest": "Jared Halpern",
+    "share_in_state": 0.060123309734672024,
+    "total_reach": 7.575537026568684,
+    "n_shows": 3,
+    "n_events": 7
+  },
+  {
+    "state": "WI",
+    "top_guest": "Brian Burke",
+    "share_in_state": 0.6419753086419754,
+    "total_reach": 75.11111111111111,
+    "n_shows": 3,
+    "n_events": 3
+  },
+  {
+    "state": "WY",
+    "top_guest": "Harriet Hageman",
+    "share_in_state": 0.31787006013812663,
+    "total_reach": 54.673650343757785,
+    "n_shows": 3,
+    "n_events": 4
+  },
+  {
+    "state": "DC",
+    "top_guest": "Jerome Powell",
+    "share_in_state": 0.1731463035467526,
+    "total_reach": 28.915432692307693,
+    "n_shows": 5,
+    "n_events": 5
+  }
+]

@@ -1,7 +1,11 @@
 import { useEffect, useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { loadDose, loadTopShowsByState } from '../data/loader';
-import type { StateMonthDose, TopShowByState } from '../types';
+import {
+  loadDose, loadTopShowsByState, loadTopGuestsByState, loadTopGuestsByFrame,
+} from '../data/loader';
+import type {
+  StateMonthDose, TopShowByState, TopGuestByState, TopGuestPerFrame,
+} from '../types';
 import { FRAME_COLORS, FRAME_LABELS, FOCUS_FRAMES } from '../types';
 
 // Standard tile-grid US layout (50 states + DC). Empty cells are gaps.
@@ -40,16 +44,43 @@ export default function Geography() {
   const [dose, setDose] = useState<StateMonthDose[]>([]);
   const [topShowsDistinctive, setTopShowsDistinctive] = useState<TopShowByState[]>([]);
   const [topShowsAbsolute, setTopShowsAbsolute] = useState<TopShowByState[]>([]);
+  const [topGuestsOverall, setTopGuestsOverall] = useState<TopGuestByState[]>([]);
+  const [topGuestsDistinctive, setTopGuestsDistinctive] = useState<TopGuestByState[]>([]);
+  const [topGuestsByFrame, setTopGuestsByFrame] = useState<Record<string, TopGuestPerFrame[]>>({});
   const [mapVariant, setMapVariant] = useState<'distinctive' | 'absolute'>('distinctive');
+  const [guestVariant, setGuestVariant] = useState<'overall' | 'distinctive'>('overall');
   const [selectedFrame, setSelectedFrame] = useState<string>('GEOPOLITICAL');
 
   useEffect(() => {
     loadDose().then(setDose);
     loadTopShowsByState('distinctive').then(setTopShowsDistinctive);
     loadTopShowsByState('absolute').then(setTopShowsAbsolute);
+    loadTopGuestsByState('overall').then(setTopGuestsOverall);
+    loadTopGuestsByState('distinctive').then(setTopGuestsDistinctive);
+    loadTopGuestsByFrame().then(setTopGuestsByFrame);
   }, []);
 
   const topShows = mapVariant === 'distinctive' ? topShowsDistinctive : topShowsAbsolute;
+  const topGuests = guestVariant === 'overall' ? topGuestsOverall : topGuestsDistinctive;
+
+  const topGuestByState = useMemo(() => {
+    const m: Record<string, TopGuestByState> = {};
+    for (const r of topGuests) m[r.state] = r;
+    return m;
+  }, [topGuests]);
+
+  const guestShareRange = useMemo(() => {
+    if (!topGuests.length) return { min: 0, max: 1 };
+    const vals = topGuests.map(r => r.share_in_state);
+    return { min: Math.min(...vals), max: Math.max(...vals) };
+  }, [topGuests]);
+
+  const topGuestPerFrameByState = useMemo(() => {
+    const m: Record<string, TopGuestPerFrame> = {};
+    const rows = topGuestsByFrame[selectedFrame] || [];
+    for (const r of rows) m[r.state] = r;
+    return m;
+  }, [topGuestsByFrame, selectedFrame]);
 
   const topShowByState = useMemo(() => {
     const m: Record<string, TopShowByState> = {};
@@ -205,6 +236,103 @@ export default function Geography() {
         </p>
       </div>
 
+      {/* Tile-grid US map: per-state top carrier guest */}
+      <div className="rounded-lg border border-stone-200 bg-white p-5">
+        <div className="flex items-start justify-between gap-4 mb-1">
+          <h3 className="text-sm font-semibold text-stone-900">
+            Each state's top carrier guest
+          </h3>
+          <div className="flex rounded-md overflow-hidden border border-stone-300 shrink-0 text-xs">
+            <button
+              onClick={() => setGuestVariant('overall')}
+              className={`px-2.5 py-1 transition-colors ${
+                guestVariant === 'overall'
+                  ? 'bg-stone-900 text-white'
+                  : 'bg-white text-stone-600 hover:bg-stone-100'
+              }`}
+            >
+              Largest reach
+            </button>
+            <button
+              onClick={() => setGuestVariant('distinctive')}
+              className={`px-2.5 py-1 border-l border-stone-300 transition-colors ${
+                guestVariant === 'distinctive'
+                  ? 'bg-stone-900 text-white'
+                  : 'bg-white text-stone-600 hover:bg-stone-100'
+              }`}
+            >
+              Most distinctive
+            </button>
+          </div>
+        </div>
+        <p className="text-xs text-stone-500 mt-0.5 mb-4 leading-relaxed">
+          {guestVariant === 'overall' ? (
+            <>
+              For each state, the carrier guest who reached that state most across
+              all their carrier appearances (sum of audience-share × show reach).
+              Tile shading scales with the share of <em>that guest's</em> total
+              reach landing in this state.
+            </>
+          ) : (
+            <>
+              For each state, the carrier guest whose total reach is most
+              over-indexed there (highest share of their reach landing in this
+              state). Surfaces guests with locally concentrated footprints. Tile
+              shading scales with that share.
+            </>
+          )}{' '}
+          Click a tile to filter the Explorer by that guest's appearances.
+        </p>
+        {topGuests.length === 0 ? (
+          <div className="text-center py-12 text-stone-400 text-sm">Loading map...</div>
+        ) : (
+          <div className="space-y-1">
+            {TILE_GRID.map((row, ri) => (
+              <div key={ri} className="grid grid-cols-11 gap-1">
+                {row.map((st, ci) => {
+                  if (!st) return <div key={ci} />;
+                  const entry = topGuestByState[st];
+                  if (!entry) {
+                    return (
+                      <div
+                        key={ci}
+                        className="rounded-sm border border-stone-200 bg-stone-50 aspect-[4/3] flex items-center justify-center text-[10px] font-mono text-stone-400"
+                      >
+                        {st}
+                      </div>
+                    );
+                  }
+                  const t = guestShareRange.max > guestShareRange.min
+                    ? (entry.share_in_state - guestShareRange.min) / (guestShareRange.max - guestShareRange.min)
+                    : 0.5;
+                  // Plum tint to differentiate from the navy show map
+                  const alphaPct = Math.round(15 + t * 60);
+                  const bg = `rgba(95, 47, 95, ${alphaPct / 100})`;
+                  const textColor = t > 0.55 ? '#ffffff' : '#3a1f3a';
+                  return (
+                    <Link
+                      key={ci}
+                      to={`/explorer?q=${encodeURIComponent(entry.top_guest)}`}
+                      title={`${STATE_NAMES[st] || st}: ${entry.top_guest} (${entry.n_events} events on ${entry.n_shows} shows; ${(entry.share_in_state * 100).toFixed(1)}% of guest's reach)`}
+                      className="rounded-sm border border-stone-200 aspect-[4/3] p-1 flex flex-col justify-between hover:border-stone-400 transition-colors group"
+                      style={{ backgroundColor: bg, color: textColor }}
+                    >
+                      <div className="flex items-center justify-between text-[9px] font-mono opacity-80">
+                        <span>{st}</span>
+                        <span className="tabular-nums">{(entry.share_in_state * 100).toFixed(0)}%</span>
+                      </div>
+                      <div className="text-[10px] leading-tight font-medium line-clamp-3 group-hover:underline decoration-1 underline-offset-2">
+                        {entry.top_guest}
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
       <div>
         <h3 className="text-sm font-semibold text-stone-900">Per-story exposure by state</h3>
         <p className="text-xs text-stone-500 mt-0.5">
@@ -266,10 +394,14 @@ export default function Geography() {
                   const alphaPct = entry.cumDose <= 0 ? 8 : Math.round(15 + t * 70);
                   const bg = `${color}${alphaPct.toString(16).padStart(2, '0')}`;
                   const textColor = t > 0.55 ? '#ffffff' : '#1f3550';
+                  const topG = topGuestPerFrameByState[st];
+                  const tooltip = topG
+                    ? `${entry.name}: ${entry.cumDose.toFixed(4)}\nTop ${FRAME_LABELS[selectedFrame]} carrier: ${topG.top_guest} (${topG.n_events} events)`
+                    : `${entry.name}: ${entry.cumDose.toFixed(4)}`;
                   return (
                     <div
                       key={ci}
-                      title={`${entry.name}: ${entry.cumDose.toFixed(4)}`}
+                      title={tooltip}
                       className="rounded-sm border border-stone-200 aspect-[4/3] p-1 flex flex-col justify-between"
                       style={{ backgroundColor: bg, color: textColor }}
                     >

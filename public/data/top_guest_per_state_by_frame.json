@@ -1,0 +1,2156 @@
+{
+  "HOUSING_STRUCTURAL": [
+    {
+      "state": "AL",
+      "top_guest": "CJ Konstantinos",
+      "frame_contrib": 0.7001117204466986,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "AK",
+      "top_guest": "Zoran Mamdani",
+      "frame_contrib": 0.29225247075454197,
+      "n_shows": 14,
+      "n_events": 15
+    },
+    {
+      "state": "AZ",
+      "top_guest": "Bill Maher",
+      "frame_contrib": 0.3884210432594598,
+      "n_shows": 10,
+      "n_events": 10
+    },
+    {
+      "state": "AR",
+      "top_guest": "John Rubino",
+      "frame_contrib": 0.1066324084329807,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "CA",
+      "top_guest": "Daryl Fairweather",
+      "frame_contrib": 4.942828819402035,
+      "n_shows": 12,
+      "n_events": 13
+    },
+    {
+      "state": "CO",
+      "top_guest": "Ramit Sethi",
+      "frame_contrib": 1.0522393248245392,
+      "n_shows": 7,
+      "n_events": 7
+    },
+    {
+      "state": "CT",
+      "top_guest": "Lilly Singh",
+      "frame_contrib": 0.5951169721244287,
+      "n_shows": 5,
+      "n_events": 6
+    },
+    {
+      "state": "DE",
+      "top_guest": "Daryl Fairweather",
+      "frame_contrib": 1.0109863866572757,
+      "n_shows": 12,
+      "n_events": 13
+    },
+    {
+      "state": "FL",
+      "top_guest": "Ed Dowd",
+      "frame_contrib": 1.114909187621384,
+      "n_shows": 7,
+      "n_events": 9
+    },
+    {
+      "state": "GA",
+      "top_guest": "Brian Goldstone",
+      "frame_contrib": 1.0405711662369561,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "HI",
+      "top_guest": "Scott Trench",
+      "frame_contrib": 0.20119896064361786,
+      "n_shows": 6,
+      "n_events": 7
+    },
+    {
+      "state": "ID",
+      "top_guest": "Daryl Fairweather",
+      "frame_contrib": 0.5585493619753796,
+      "n_shows": 12,
+      "n_events": 13
+    },
+    {
+      "state": "IL",
+      "top_guest": "Adiel Gorel",
+      "frame_contrib": 3.9015416502952576,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "IN",
+      "top_guest": "Graham",
+      "frame_contrib": 0.44089865945698214,
+      "n_shows": 7,
+      "n_events": 7
+    },
+    {
+      "state": "IA",
+      "top_guest": "Ryan Gerdusky",
+      "frame_contrib": 0.6099252427179201,
+      "n_shows": 4,
+      "n_events": 6
+    },
+    {
+      "state": "KS",
+      "top_guest": "Donna",
+      "frame_contrib": 0.5293861124664545,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "KY",
+      "top_guest": "Rod Khleif",
+      "frame_contrib": 0.41944270581007004,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "LA",
+      "top_guest": "Daryl Fairweather",
+      "frame_contrib": 2.750457477993396,
+      "n_shows": 12,
+      "n_events": 13
+    },
+    {
+      "state": "ME",
+      "top_guest": "Jill",
+      "frame_contrib": 0.2735218366194001,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "MD",
+      "top_guest": "Errol Lewis",
+      "frame_contrib": 0.9759920703974075,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "MA",
+      "top_guest": "Daryl Fairweather",
+      "frame_contrib": 0.8725513905419966,
+      "n_shows": 12,
+      "n_events": 13
+    },
+    {
+      "state": "MI",
+      "top_guest": "Chad Bianco",
+      "frame_contrib": 0.7164151366492645,
+      "n_shows": 6,
+      "n_events": 6
+    },
+    {
+      "state": "MN",
+      "top_guest": "Scott Trench",
+      "frame_contrib": 2.4312464217604575,
+      "n_shows": 6,
+      "n_events": 7
+    },
+    {
+      "state": "MS",
+      "top_guest": "John Rubino",
+      "frame_contrib": 0.08929500286214578,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "MO",
+      "top_guest": "Ken McElroy",
+      "frame_contrib": 0.9366250919799011,
+      "n_shows": 5,
+      "n_events": 5
+    },
+    {
+      "state": "MT",
+      "top_guest": "Daryl Fairweather",
+      "frame_contrib": 0.22044967267650845,
+      "n_shows": 12,
+      "n_events": 13
+    },
+    {
+      "state": "NE",
+      "top_guest": "Daryl Fairweather",
+      "frame_contrib": 0.8552280661137679,
+      "n_shows": 12,
+      "n_events": 13
+    },
+    {
+      "state": "NV",
+      "top_guest": "Ken McElroy",
+      "frame_contrib": 2.82817503888502,
+      "n_shows": 5,
+      "n_events": 5
+    },
+    {
+      "state": "NH",
+      "top_guest": "Jeff Deist",
+      "frame_contrib": 0.07638425845652819,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "NJ",
+      "top_guest": "Daryl Fairweather",
+      "frame_contrib": 3.8772128319072454,
+      "n_shows": 12,
+      "n_events": 13
+    },
+    {
+      "state": "NM",
+      "top_guest": "Ken McElroy",
+      "frame_contrib": 0.4973922775637719,
+      "n_shows": 5,
+      "n_events": 5
+    },
+    {
+      "state": "NY",
+      "top_guest": "Daryl Fairweather",
+      "frame_contrib": 7.834795292717031,
+      "n_shows": 12,
+      "n_events": 13
+    },
+    {
+      "state": "NC",
+      "top_guest": "Daryl Fairweather",
+      "frame_contrib": 0.6485359913570062,
+      "n_shows": 12,
+      "n_events": 13
+    },
+    {
+      "state": "ND",
+      "top_guest": "Neal Bawa",
+      "frame_contrib": 3.3610884994268417,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "OH",
+      "top_guest": "Saikat Chakrabarti",
+      "frame_contrib": 2.247199537268489,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "OK",
+      "top_guest": "Daryl Fairweather",
+      "frame_contrib": 0.2250922180588785,
+      "n_shows": 12,
+      "n_events": 13
+    },
+    {
+      "state": "OR",
+      "top_guest": "Zach Abraham",
+      "frame_contrib": 1.9754485761017464,
+      "n_shows": 3,
+      "n_events": 17
+    },
+    {
+      "state": "PA",
+      "top_guest": "Ken McElroy",
+      "frame_contrib": 2.2874521923561892,
+      "n_shows": 5,
+      "n_events": 5
+    },
+    {
+      "state": "RI",
+      "top_guest": "Jeff Deist",
+      "frame_contrib": 0.25063332170248026,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "SC",
+      "top_guest": "Scott Trench",
+      "frame_contrib": 0.44261430044594047,
+      "n_shows": 6,
+      "n_events": 7
+    },
+    {
+      "state": "SD",
+      "top_guest": "Daryl Fairweather",
+      "frame_contrib": 0.09676727954892143,
+      "n_shows": 12,
+      "n_events": 13
+    },
+    {
+      "state": "TN",
+      "top_guest": "John Rubino",
+      "frame_contrib": 1.3888324268183698,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "TX",
+      "top_guest": "Adiel Gorel",
+      "frame_contrib": 2.240673303604126,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "UT",
+      "top_guest": "John Fuglesang",
+      "frame_contrib": 0.6240423119609472,
+      "n_shows": 3,
+      "n_events": 9
+    },
+    {
+      "state": "VT",
+      "top_guest": "Charles Fain Lehman",
+      "frame_contrib": 0.04488949169472013,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "VA",
+      "top_guest": "J Scott",
+      "frame_contrib": 1.6488051116466522,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "WA",
+      "top_guest": "Katie Wilson",
+      "frame_contrib": 2.694060217221282,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "WV",
+      "top_guest": "Devin Nunes",
+      "frame_contrib": 0.10430884924984196,
+      "n_shows": 8,
+      "n_events": 12
+    },
+    {
+      "state": "WI",
+      "top_guest": "Neal Bawa",
+      "frame_contrib": 5.644716970125834,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "WY",
+      "top_guest": "Graham",
+      "frame_contrib": 0.20074319365349683,
+      "n_shows": 7,
+      "n_events": 7
+    },
+    {
+      "state": "DC",
+      "top_guest": "Saikat Chakrabarti",
+      "frame_contrib": 0.320672925606319,
+      "n_shows": 4,
+      "n_events": 4
+    }
+  ],
+  "PARTISAN_BLAME": [
+    {
+      "state": "AL",
+      "top_guest": "Scott Jennings",
+      "frame_contrib": 2.202036016760626,
+      "n_shows": 33,
+      "n_events": 41
+    },
+    {
+      "state": "AK",
+      "top_guest": "Marjorie Taylor Greene",
+      "frame_contrib": 0.4571208068111426,
+      "n_shows": 29,
+      "n_events": 36
+    },
+    {
+      "state": "AZ",
+      "top_guest": "Liz Peek",
+      "frame_contrib": 3.1075299972005928,
+      "n_shows": 8,
+      "n_events": 44
+    },
+    {
+      "state": "AR",
+      "top_guest": "Ed",
+      "frame_contrib": 0.9337642349056061,
+      "n_shows": 7,
+      "n_events": 7
+    },
+    {
+      "state": "CA",
+      "top_guest": "Steve Moore",
+      "frame_contrib": 7.060897901570799,
+      "n_shows": 19,
+      "n_events": 78
+    },
+    {
+      "state": "CO",
+      "top_guest": "David Sirota",
+      "frame_contrib": 2.580602603033185,
+      "n_shows": 6,
+      "n_events": 7
+    },
+    {
+      "state": "CT",
+      "top_guest": "Mike Pence",
+      "frame_contrib": 3.5606107859155856,
+      "n_shows": 11,
+      "n_events": 13
+    },
+    {
+      "state": "DE",
+      "top_guest": "Steve Moore",
+      "frame_contrib": 1.9901559618738203,
+      "n_shows": 19,
+      "n_events": 78
+    },
+    {
+      "state": "FL",
+      "top_guest": "Stephen A. Smith",
+      "frame_contrib": 5.292903209936911,
+      "n_shows": 14,
+      "n_events": 21
+    },
+    {
+      "state": "GA",
+      "top_guest": "Bernie Sanders",
+      "frame_contrib": 2.002115557970244,
+      "n_shows": 25,
+      "n_events": 36
+    },
+    {
+      "state": "HI",
+      "top_guest": "Marjorie Taylor Greene",
+      "frame_contrib": 0.1914676346241281,
+      "n_shows": 29,
+      "n_events": 36
+    },
+    {
+      "state": "ID",
+      "top_guest": "Michael Steele",
+      "frame_contrib": 1.1052528069522412,
+      "n_shows": 8,
+      "n_events": 13
+    },
+    {
+      "state": "IL",
+      "top_guest": "Jasmine Crockett",
+      "frame_contrib": 5.293872271850329,
+      "n_shows": 36,
+      "n_events": 45
+    },
+    {
+      "state": "IN",
+      "top_guest": "Stephen Moore",
+      "frame_contrib": 2.1770788518266153,
+      "n_shows": 15,
+      "n_events": 24
+    },
+    {
+      "state": "IA",
+      "top_guest": "Ryan Gerdusky",
+      "frame_contrib": 1.9154888483234718,
+      "n_shows": 4,
+      "n_events": 6
+    },
+    {
+      "state": "KS",
+      "top_guest": "Charlie Gasparino",
+      "frame_contrib": 1.9589969515800476,
+      "n_shows": 5,
+      "n_events": 11
+    },
+    {
+      "state": "KY",
+      "top_guest": "Liz Peek",
+      "frame_contrib": 5.969422453904318,
+      "n_shows": 8,
+      "n_events": 44
+    },
+    {
+      "state": "LA",
+      "top_guest": "Scott Jennings",
+      "frame_contrib": 3.553676704298461,
+      "n_shows": 33,
+      "n_events": 41
+    },
+    {
+      "state": "ME",
+      "top_guest": "Chris Johnson",
+      "frame_contrib": 0.7174242078326643,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "MD",
+      "top_guest": "Liz Peek",
+      "frame_contrib": 2.370978844199399,
+      "n_shows": 8,
+      "n_events": 44
+    },
+    {
+      "state": "MA",
+      "top_guest": "James Fishback",
+      "frame_contrib": 3.135344941413024,
+      "n_shows": 13,
+      "n_events": 13
+    },
+    {
+      "state": "MI",
+      "top_guest": "Ted Nugent",
+      "frame_contrib": 2.0879488123215104,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "MN",
+      "top_guest": "Scott Perry",
+      "frame_contrib": 2.5015696745995877,
+      "n_shows": 6,
+      "n_events": 7
+    },
+    {
+      "state": "MS",
+      "top_guest": "Henry Washington",
+      "frame_contrib": 0.17459010217615822,
+      "n_shows": 3,
+      "n_events": 8
+    },
+    {
+      "state": "MO",
+      "top_guest": "Marjorie Taylor Greene",
+      "frame_contrib": 1.8434857556140671,
+      "n_shows": 29,
+      "n_events": 36
+    },
+    {
+      "state": "MT",
+      "top_guest": "Alex Jones",
+      "frame_contrib": 1.4623472384682992,
+      "n_shows": 10,
+      "n_events": 19
+    },
+    {
+      "state": "NE",
+      "top_guest": "Ron Johnson",
+      "frame_contrib": 3.035158722979069,
+      "n_shows": 22,
+      "n_events": 35
+    },
+    {
+      "state": "NV",
+      "top_guest": "Bill",
+      "frame_contrib": 1.4385876196169791,
+      "n_shows": 9,
+      "n_events": 12
+    },
+    {
+      "state": "NH",
+      "top_guest": "George Santos",
+      "frame_contrib": 0.6194079395602732,
+      "n_shows": 5,
+      "n_events": 5
+    },
+    {
+      "state": "NJ",
+      "top_guest": "Steve Moore",
+      "frame_contrib": 4.6507445334002036,
+      "n_shows": 19,
+      "n_events": 78
+    },
+    {
+      "state": "NM",
+      "top_guest": "Liz Peek",
+      "frame_contrib": 2.0190592859852865,
+      "n_shows": 8,
+      "n_events": 44
+    },
+    {
+      "state": "NY",
+      "top_guest": "Hakeem Jeffries",
+      "frame_contrib": 10.21876516789689,
+      "n_shows": 37,
+      "n_events": 71
+    },
+    {
+      "state": "NC",
+      "top_guest": "Josh Dawsey",
+      "frame_contrib": 1.5336835275216307,
+      "n_shows": 6,
+      "n_events": 6
+    },
+    {
+      "state": "ND",
+      "top_guest": "Brooke Rollins",
+      "frame_contrib": 4.004453917459724,
+      "n_shows": 17,
+      "n_events": 22
+    },
+    {
+      "state": "OH",
+      "top_guest": "Liz Peek",
+      "frame_contrib": 4.493262423532269,
+      "n_shows": 8,
+      "n_events": 44
+    },
+    {
+      "state": "OK",
+      "top_guest": "Ed",
+      "frame_contrib": 1.4330885256492427,
+      "n_shows": 7,
+      "n_events": 7
+    },
+    {
+      "state": "OR",
+      "top_guest": "Mark Gober",
+      "frame_contrib": 1.9999414893471545,
+      "n_shows": 5,
+      "n_events": 5
+    },
+    {
+      "state": "PA",
+      "top_guest": "Liz Peek",
+      "frame_contrib": 4.637319809826708,
+      "n_shows": 8,
+      "n_events": 44
+    },
+    {
+      "state": "RI",
+      "top_guest": "Dan Morgan",
+      "frame_contrib": 1.166792203919797,
+      "n_shows": 6,
+      "n_events": 9
+    },
+    {
+      "state": "SC",
+      "top_guest": "Jim Acosta",
+      "frame_contrib": 0.9300258437204465,
+      "n_shows": 6,
+      "n_events": 7
+    },
+    {
+      "state": "SD",
+      "top_guest": "Pete Sepp",
+      "frame_contrib": 0.8180997003866753,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "TN",
+      "top_guest": "Dave Collum",
+      "frame_contrib": 2.76281378678608,
+      "n_shows": 9,
+      "n_events": 13
+    },
+    {
+      "state": "TX",
+      "top_guest": "Liz Peek",
+      "frame_contrib": 8.601339296490346,
+      "n_shows": 8,
+      "n_events": 44
+    },
+    {
+      "state": "UT",
+      "top_guest": "Charlie Dent",
+      "frame_contrib": 1.9192708570922863,
+      "n_shows": 7,
+      "n_events": 8
+    },
+    {
+      "state": "VT",
+      "top_guest": "Miles Taylor",
+      "frame_contrib": 0.7858156131115603,
+      "n_shows": 4,
+      "n_events": 7
+    },
+    {
+      "state": "VA",
+      "top_guest": "David Marcus",
+      "frame_contrib": 2.605200831388412,
+      "n_shows": 4,
+      "n_events": 16
+    },
+    {
+      "state": "WA",
+      "top_guest": "Michael Steele",
+      "frame_contrib": 2.6572366343796494,
+      "n_shows": 8,
+      "n_events": 13
+    },
+    {
+      "state": "WV",
+      "top_guest": "Devin Nunes",
+      "frame_contrib": 0.2700516941663625,
+      "n_shows": 8,
+      "n_events": 12
+    },
+    {
+      "state": "WI",
+      "top_guest": "Scott Jennings",
+      "frame_contrib": 4.223328929606497,
+      "n_shows": 33,
+      "n_events": 41
+    },
+    {
+      "state": "WY",
+      "top_guest": "Harriet Hageman",
+      "frame_contrib": 0.7828327515726401,
+      "n_shows": 3,
+      "n_events": 4
+    },
+    {
+      "state": "DC",
+      "top_guest": "Pete Hegseth",
+      "frame_contrib": 0.9845725120693605,
+      "n_shows": 30,
+      "n_events": 34
+    }
+  ],
+  "FED_FAILURE": [
+    {
+      "state": "AL",
+      "top_guest": "Jim Bianco",
+      "frame_contrib": 6.338864387568447,
+      "n_shows": 13,
+      "n_events": 22
+    },
+    {
+      "state": "AK",
+      "top_guest": "Jim Bianco",
+      "frame_contrib": 2.389552687930169,
+      "n_shows": 13,
+      "n_events": 22
+    },
+    {
+      "state": "AZ",
+      "top_guest": "Danielle DiMartino Booth",
+      "frame_contrib": 1.3355662124399035,
+      "n_shows": 11,
+      "n_events": 20
+    },
+    {
+      "state": "AR",
+      "top_guest": "Elon Musk",
+      "frame_contrib": 0.5132199507935057,
+      "n_shows": 21,
+      "n_events": 28
+    },
+    {
+      "state": "CA",
+      "top_guest": "Austan Goolsbee",
+      "frame_contrib": 14.228348130411751,
+      "n_shows": 15,
+      "n_events": 18
+    },
+    {
+      "state": "CO",
+      "top_guest": "Joseph Wang",
+      "frame_contrib": 3.504265357676336,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "CT",
+      "top_guest": "Mike McKee",
+      "frame_contrib": 4.139103461287729,
+      "n_shows": 3,
+      "n_events": 5
+    },
+    {
+      "state": "DE",
+      "top_guest": "Steve Moore",
+      "frame_contrib": 2.6323817516369905,
+      "n_shows": 19,
+      "n_events": 78
+    },
+    {
+      "state": "FL",
+      "top_guest": "Jim Bianco",
+      "frame_contrib": 12.69597759858652,
+      "n_shows": 13,
+      "n_events": 22
+    },
+    {
+      "state": "GA",
+      "top_guest": "Jim Bianco",
+      "frame_contrib": 2.6513297935224163,
+      "n_shows": 13,
+      "n_events": 22
+    },
+    {
+      "state": "HI",
+      "top_guest": "Neil Irwin",
+      "frame_contrib": 0.23268660906347344,
+      "n_shows": 6,
+      "n_events": 6
+    },
+    {
+      "state": "ID",
+      "top_guest": "Ralph Norman",
+      "frame_contrib": 2.01746279373765,
+      "n_shows": 7,
+      "n_events": 10
+    },
+    {
+      "state": "IL",
+      "top_guest": "Danielle DiMartino Booth",
+      "frame_contrib": 4.494139104665886,
+      "n_shows": 11,
+      "n_events": 20
+    },
+    {
+      "state": "IN",
+      "top_guest": "Stephen Moore",
+      "frame_contrib": 2.9145757103827306,
+      "n_shows": 15,
+      "n_events": 24
+    },
+    {
+      "state": "IA",
+      "top_guest": "Dakota Meyer",
+      "frame_contrib": 1.2955218723028148,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "KS",
+      "top_guest": "Jim Rickards",
+      "frame_contrib": 0.43985887540449414,
+      "n_shows": 5,
+      "n_events": 9
+    },
+    {
+      "state": "KY",
+      "top_guest": "Liz Peek",
+      "frame_contrib": 1.1229514572550467,
+      "n_shows": 8,
+      "n_events": 44
+    },
+    {
+      "state": "LA",
+      "top_guest": "Tom Luongo",
+      "frame_contrib": 1.7091497041845836,
+      "n_shows": 8,
+      "n_events": 13
+    },
+    {
+      "state": "ME",
+      "top_guest": "Neil Irwin",
+      "frame_contrib": 0.28202089878499964,
+      "n_shows": 6,
+      "n_events": 6
+    },
+    {
+      "state": "MD",
+      "top_guest": "Neil Irwin",
+      "frame_contrib": 2.1619226482337774,
+      "n_shows": 6,
+      "n_events": 6
+    },
+    {
+      "state": "MA",
+      "top_guest": "Jim Bianco",
+      "frame_contrib": 2.708005212711556,
+      "n_shows": 13,
+      "n_events": 22
+    },
+    {
+      "state": "MI",
+      "top_guest": "Jim Bianco",
+      "frame_contrib": 2.0526878849008106,
+      "n_shows": 13,
+      "n_events": 22
+    },
+    {
+      "state": "MN",
+      "top_guest": "Jim Bianco",
+      "frame_contrib": 6.017485493199217,
+      "n_shows": 13,
+      "n_events": 22
+    },
+    {
+      "state": "MS",
+      "top_guest": "Nick Timiraos",
+      "frame_contrib": 0.45732301250934343,
+      "n_shows": 6,
+      "n_events": 7
+    },
+    {
+      "state": "MO",
+      "top_guest": "Austan Goolsbee",
+      "frame_contrib": 2.78729355322569,
+      "n_shows": 15,
+      "n_events": 18
+    },
+    {
+      "state": "MT",
+      "top_guest": "Neil Irwin",
+      "frame_contrib": 0.629476849746993,
+      "n_shows": 6,
+      "n_events": 6
+    },
+    {
+      "state": "NE",
+      "top_guest": "Loretta Mester",
+      "frame_contrib": 2.138045809903301,
+      "n_shows": 3,
+      "n_events": 4
+    },
+    {
+      "state": "NV",
+      "top_guest": "Michael Zuber",
+      "frame_contrib": 1.348895059237557,
+      "n_shows": 3,
+      "n_events": 6
+    },
+    {
+      "state": "NH",
+      "top_guest": "Steve Moore",
+      "frame_contrib": 0.42699285358094674,
+      "n_shows": 19,
+      "n_events": 78
+    },
+    {
+      "state": "NJ",
+      "top_guest": "Steve Moore",
+      "frame_contrib": 6.297296498765816,
+      "n_shows": 19,
+      "n_events": 78
+    },
+    {
+      "state": "NM",
+      "top_guest": "Liz Peek",
+      "frame_contrib": 0.6387119330454617,
+      "n_shows": 8,
+      "n_events": 44
+    },
+    {
+      "state": "NY",
+      "top_guest": "Torsten Slok",
+      "frame_contrib": 9.170781764830956,
+      "n_shows": 8,
+      "n_events": 17
+    },
+    {
+      "state": "NC",
+      "top_guest": "Richard Clarida",
+      "frame_contrib": 4.058565627299531,
+      "n_shows": 8,
+      "n_events": 9
+    },
+    {
+      "state": "ND",
+      "top_guest": "Neal Bawa",
+      "frame_contrib": 0.40180456172674894,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "OH",
+      "top_guest": "Steve Moore",
+      "frame_contrib": 2.849117851883108,
+      "n_shows": 19,
+      "n_events": 78
+    },
+    {
+      "state": "OK",
+      "top_guest": "Dakota Meyer",
+      "frame_contrib": 0.6978513903019897,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "OR",
+      "top_guest": "Liz Peek",
+      "frame_contrib": 3.9948803699436484,
+      "n_shows": 8,
+      "n_events": 44
+    },
+    {
+      "state": "PA",
+      "top_guest": "Jim Bianco",
+      "frame_contrib": 9.474395061993148,
+      "n_shows": 13,
+      "n_events": 22
+    },
+    {
+      "state": "RI",
+      "top_guest": "Beth Hammack",
+      "frame_contrib": 0.9335752202415885,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "SC",
+      "top_guest": "Colin Martin",
+      "frame_contrib": 0.5391116748901612,
+      "n_shows": 3,
+      "n_events": 8
+    },
+    {
+      "state": "SD",
+      "top_guest": "Dan Niles",
+      "frame_contrib": 0.3679007329403391,
+      "n_shows": 8,
+      "n_events": 12
+    },
+    {
+      "state": "TN",
+      "top_guest": "Torsten Slok",
+      "frame_contrib": 4.089510289098737,
+      "n_shows": 8,
+      "n_events": 17
+    },
+    {
+      "state": "TX",
+      "top_guest": "Jim Bianco",
+      "frame_contrib": 8.237040606464003,
+      "n_shows": 13,
+      "n_events": 22
+    },
+    {
+      "state": "UT",
+      "top_guest": "Loretta Mester",
+      "frame_contrib": 1.553095032067513,
+      "n_shows": 3,
+      "n_events": 4
+    },
+    {
+      "state": "VT",
+      "top_guest": "Liz Hoffman",
+      "frame_contrib": 0.3003585434158827,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "VA",
+      "top_guest": "Jim Bianco",
+      "frame_contrib": 2.0070149395183634,
+      "n_shows": 13,
+      "n_events": 22
+    },
+    {
+      "state": "WA",
+      "top_guest": "Jim Bianco",
+      "frame_contrib": 3.819834263525327,
+      "n_shows": 13,
+      "n_events": 22
+    },
+    {
+      "state": "WV",
+      "top_guest": "Tommy Tuberville",
+      "frame_contrib": 0.24520709964583967,
+      "n_shows": 13,
+      "n_events": 15
+    },
+    {
+      "state": "WI",
+      "top_guest": "Neal Bawa",
+      "frame_contrib": 1.5445605389773847,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "WY",
+      "top_guest": "Newt Gingrich",
+      "frame_contrib": 0.12805261057731565,
+      "n_shows": 10,
+      "n_events": 18
+    },
+    {
+      "state": "DC",
+      "top_guest": "Jerome Powell",
+      "frame_contrib": 1.786064914710318,
+      "n_shows": 5,
+      "n_events": 5
+    }
+  ],
+  "GEOPOLITICAL": [
+    {
+      "state": "AL",
+      "top_guest": "Anthony Scaramucci",
+      "frame_contrib": 1.5735267713017373,
+      "n_shows": 13,
+      "n_events": 14
+    },
+    {
+      "state": "AK",
+      "top_guest": "Doug Ford",
+      "frame_contrib": 0.9584492628143766,
+      "n_shows": 7,
+      "n_events": 8
+    },
+    {
+      "state": "AZ",
+      "top_guest": "Amit Segal",
+      "frame_contrib": 1.100301775741262,
+      "n_shows": 3,
+      "n_events": 5
+    },
+    {
+      "state": "AR",
+      "top_guest": "Marco Rubio",
+      "frame_contrib": 0.5124784625202334,
+      "n_shows": 19,
+      "n_events": 32
+    },
+    {
+      "state": "CA",
+      "top_guest": "Edward Fishman",
+      "frame_contrib": 7.492758219833091,
+      "n_shows": 7,
+      "n_events": 7
+    },
+    {
+      "state": "CO",
+      "top_guest": "Edward Fishman",
+      "frame_contrib": 1.528269348237892,
+      "n_shows": 7,
+      "n_events": 7
+    },
+    {
+      "state": "CT",
+      "top_guest": "Torsten Slok",
+      "frame_contrib": 2.3512476630188046,
+      "n_shows": 8,
+      "n_events": 17
+    },
+    {
+      "state": "DE",
+      "top_guest": "Steve Moore",
+      "frame_contrib": 1.523066858771809,
+      "n_shows": 19,
+      "n_events": 78
+    },
+    {
+      "state": "FL",
+      "top_guest": "Halima Croft",
+      "frame_contrib": 2.5604160333612342,
+      "n_shows": 4,
+      "n_events": 9
+    },
+    {
+      "state": "GA",
+      "top_guest": "Ainsley Earhardt",
+      "frame_contrib": 0.7451943401579335,
+      "n_shows": 7,
+      "n_events": 18
+    },
+    {
+      "state": "HI",
+      "top_guest": "Scott Horton",
+      "frame_contrib": 0.11548007331708109,
+      "n_shows": 11,
+      "n_events": 14
+    },
+    {
+      "state": "ID",
+      "top_guest": "Randy Fine",
+      "frame_contrib": 2.1316977971012046,
+      "n_shows": 6,
+      "n_events": 10
+    },
+    {
+      "state": "IL",
+      "top_guest": "Steve Moore",
+      "frame_contrib": 2.2547047167606937,
+      "n_shows": 19,
+      "n_events": 78
+    },
+    {
+      "state": "IN",
+      "top_guest": "Steve Moore",
+      "frame_contrib": 1.114389179320684,
+      "n_shows": 19,
+      "n_events": 78
+    },
+    {
+      "state": "IA",
+      "top_guest": "Bill McKibben",
+      "frame_contrib": 0.4124564115209882,
+      "n_shows": 6,
+      "n_events": 8
+    },
+    {
+      "state": "KS",
+      "top_guest": "Alyssa Slotkin",
+      "frame_contrib": 1.2912063320580371,
+      "n_shows": 10,
+      "n_events": 11
+    },
+    {
+      "state": "KY",
+      "top_guest": "David Cay Johnston",
+      "frame_contrib": 0.7662492133157198,
+      "n_shows": 4,
+      "n_events": 7
+    },
+    {
+      "state": "LA",
+      "top_guest": "Peter Navarro",
+      "frame_contrib": 0.8670201893766725,
+      "n_shows": 21,
+      "n_events": 28
+    },
+    {
+      "state": "ME",
+      "top_guest": "Chris Johnson",
+      "frame_contrib": 0.3890487761236727,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "MD",
+      "top_guest": "Jeff Mason",
+      "frame_contrib": 1.3136102054868293,
+      "n_shows": 8,
+      "n_events": 14
+    },
+    {
+      "state": "MA",
+      "top_guest": "Lori Wallach",
+      "frame_contrib": 1.5130433824379024,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "MI",
+      "top_guest": "Tim Dillon",
+      "frame_contrib": 1.9417023246520255,
+      "n_shows": 5,
+      "n_events": 5
+    },
+    {
+      "state": "MN",
+      "top_guest": "Halima Croft",
+      "frame_contrib": 2.4631911527973203,
+      "n_shows": 4,
+      "n_events": 9
+    },
+    {
+      "state": "MS",
+      "top_guest": "Max",
+      "frame_contrib": 0.06991993458889618,
+      "n_shows": 6,
+      "n_events": 6
+    },
+    {
+      "state": "MO",
+      "top_guest": "Murtaza Hussain",
+      "frame_contrib": 1.5379029259458725,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "MT",
+      "top_guest": "Randy Weingarten",
+      "frame_contrib": 0.3106456066900299,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "NE",
+      "top_guest": "Amrita Sen",
+      "frame_contrib": 2.1040527309690202,
+      "n_shows": 3,
+      "n_events": 5
+    },
+    {
+      "state": "NV",
+      "top_guest": "Halima Croft",
+      "frame_contrib": 1.2048681430397676,
+      "n_shows": 4,
+      "n_events": 9
+    },
+    {
+      "state": "NH",
+      "top_guest": "Steve Moore",
+      "frame_contrib": 0.42348576790908005,
+      "n_shows": 19,
+      "n_events": 78
+    },
+    {
+      "state": "NJ",
+      "top_guest": "Steve Moore",
+      "frame_contrib": 3.768560900755751,
+      "n_shows": 19,
+      "n_events": 78
+    },
+    {
+      "state": "NM",
+      "top_guest": "Matt Smith",
+      "frame_contrib": 0.1986162995717645,
+      "n_shows": 7,
+      "n_events": 8
+    },
+    {
+      "state": "NY",
+      "top_guest": "John Kilduff",
+      "frame_contrib": 7.426181438433389,
+      "n_shows": 3,
+      "n_events": 4
+    },
+    {
+      "state": "NC",
+      "top_guest": "Halima Croft",
+      "frame_contrib": 2.4913114153298306,
+      "n_shows": 4,
+      "n_events": 9
+    },
+    {
+      "state": "ND",
+      "top_guest": "Brooke Rollins",
+      "frame_contrib": 1.167735827709245,
+      "n_shows": 17,
+      "n_events": 22
+    },
+    {
+      "state": "OH",
+      "top_guest": "Randy Weingarten",
+      "frame_contrib": 2.5431258477843723,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "OK",
+      "top_guest": "Matt Gorman",
+      "frame_contrib": 0.4809161339487348,
+      "n_shows": 9,
+      "n_events": 12
+    },
+    {
+      "state": "OR",
+      "top_guest": "Liz Peek",
+      "frame_contrib": 2.704069295376481,
+      "n_shows": 8,
+      "n_events": 44
+    },
+    {
+      "state": "PA",
+      "top_guest": "Pete Hegseth",
+      "frame_contrib": 2.350412947305073,
+      "n_shows": 30,
+      "n_events": 34
+    },
+    {
+      "state": "RI",
+      "top_guest": "Dan Morgan",
+      "frame_contrib": 0.41121944785118103,
+      "n_shows": 6,
+      "n_events": 9
+    },
+    {
+      "state": "SC",
+      "top_guest": "Halima Croft",
+      "frame_contrib": 0.7290224666180819,
+      "n_shows": 4,
+      "n_events": 9
+    },
+    {
+      "state": "SD",
+      "top_guest": "Evan Ratliff",
+      "frame_contrib": 0.713322607689346,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "TN",
+      "top_guest": "Halima Croft",
+      "frame_contrib": 1.3504400633766913,
+      "n_shows": 4,
+      "n_events": 9
+    },
+    {
+      "state": "TX",
+      "top_guest": "Pete Hegseth",
+      "frame_contrib": 3.342711289882154,
+      "n_shows": 30,
+      "n_events": 34
+    },
+    {
+      "state": "UT",
+      "top_guest": "Alex Ward",
+      "frame_contrib": 2.067857392842997,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "VT",
+      "top_guest": "Nick Gillespie",
+      "frame_contrib": 0.39511684021077204,
+      "n_shows": 3,
+      "n_events": 4
+    },
+    {
+      "state": "VA",
+      "top_guest": "Pete Hegseth",
+      "frame_contrib": 1.443817003435307,
+      "n_shows": 30,
+      "n_events": 34
+    },
+    {
+      "state": "WA",
+      "top_guest": "Mike Adams",
+      "frame_contrib": 2.054585960481739,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "WV",
+      "top_guest": "Victor Davis Hanson",
+      "frame_contrib": 0.29879197098838417,
+      "n_shows": 15,
+      "n_events": 28
+    },
+    {
+      "state": "WI",
+      "top_guest": "J Scott",
+      "frame_contrib": 1.3573794182803895,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "WY",
+      "top_guest": "Harriet Hageman",
+      "frame_contrib": 0.4307847183221922,
+      "n_shows": 3,
+      "n_events": 4
+    },
+    {
+      "state": "DC",
+      "top_guest": "Justin Trudeau",
+      "frame_contrib": 0.30821038236707615,
+      "n_shows": 5,
+      "n_events": 6
+    }
+  ],
+  "WAGE_SPIRAL": [
+    {
+      "state": "AL",
+      "top_guest": "Mark Yusko",
+      "frame_contrib": 0.7646861971944228,
+      "n_shows": 3,
+      "n_events": 5
+    },
+    {
+      "state": "AK",
+      "top_guest": "Bernie Sanders",
+      "frame_contrib": 0.2997106950599474,
+      "n_shows": 25,
+      "n_events": 36
+    },
+    {
+      "state": "AZ",
+      "top_guest": "Eric Blanc",
+      "frame_contrib": 1.1347764321735927,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "AR",
+      "top_guest": "Bernie Sanders",
+      "frame_contrib": 0.14462466000252203,
+      "n_shows": 25,
+      "n_events": 36
+    },
+    {
+      "state": "CA",
+      "top_guest": "Adam Chandler",
+      "frame_contrib": 4.417588259502278,
+      "n_shows": 5,
+      "n_events": 5
+    },
+    {
+      "state": "CO",
+      "top_guest": "Hunter",
+      "frame_contrib": 1.2463818899720442,
+      "n_shows": 5,
+      "n_events": 5
+    },
+    {
+      "state": "CT",
+      "top_guest": "Lori Chavez-DeRemer",
+      "frame_contrib": 4.314138256768824,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "DE",
+      "top_guest": "Bernie Sanders",
+      "frame_contrib": 0.4679337542801541,
+      "n_shows": 25,
+      "n_events": 36
+    },
+    {
+      "state": "FL",
+      "top_guest": "Cassie",
+      "frame_contrib": 5.67694580669184,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "GA",
+      "top_guest": "Brian Goldstone",
+      "frame_contrib": 1.4337711828543893,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "HI",
+      "top_guest": "Brian Karem",
+      "frame_contrib": 0.10933344184920409,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "ID",
+      "top_guest": "Caroline Levitt",
+      "frame_contrib": 0.4865853731230706,
+      "n_shows": 14,
+      "n_events": 21
+    },
+    {
+      "state": "IL",
+      "top_guest": "Danielle DiMartino Booth",
+      "frame_contrib": 1.6855982668831853,
+      "n_shows": 11,
+      "n_events": 20
+    },
+    {
+      "state": "IN",
+      "top_guest": "Kaylee",
+      "frame_contrib": 0.9980611533046627,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "IA",
+      "top_guest": "Chris Smalls",
+      "frame_contrib": 1.0000572409832253,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "KS",
+      "top_guest": "Jared Abbott",
+      "frame_contrib": 0.33072932545424166,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "KY",
+      "top_guest": "Danielle DiMartino Booth",
+      "frame_contrib": 0.2931028894140392,
+      "n_shows": 11,
+      "n_events": 20
+    },
+    {
+      "state": "LA",
+      "top_guest": "Corey DeAngelis",
+      "frame_contrib": 0.41979660033960386,
+      "n_shows": 11,
+      "n_events": 11
+    },
+    {
+      "state": "ME",
+      "top_guest": "Julie Su",
+      "frame_contrib": 0.17266038313508034,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "MD",
+      "top_guest": "Chris Smalls",
+      "frame_contrib": 1.8956308896249197,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "MA",
+      "top_guest": "Daniel Priestley",
+      "frame_contrib": 1.220720780621572,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "MI",
+      "top_guest": "Chris Smalls",
+      "frame_contrib": 2.015040709443812,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "MN",
+      "top_guest": "Brian Goldstone",
+      "frame_contrib": 1.6631613044003748,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "MS",
+      "top_guest": "Brian Karem",
+      "frame_contrib": 0.08903840012920247,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "MO",
+      "top_guest": "Eric Blanc",
+      "frame_contrib": 1.8440117022820883,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "MT",
+      "top_guest": "Sahil Bloom",
+      "frame_contrib": 0.9783592194454943,
+      "n_shows": 8,
+      "n_events": 8
+    },
+    {
+      "state": "NE",
+      "top_guest": "Julia Pollack",
+      "frame_contrib": 0.8959206067327327,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "NV",
+      "top_guest": "Derek Coburn",
+      "frame_contrib": 0.48490306072764927,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "NH",
+      "top_guest": "Joan C. Williams",
+      "frame_contrib": 0.3145561002425311,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "NJ",
+      "top_guest": "Corey DeAngelis",
+      "frame_contrib": 1.9280607877751479,
+      "n_shows": 11,
+      "n_events": 11
+    },
+    {
+      "state": "NM",
+      "top_guest": "Chris Smalls",
+      "frame_contrib": 0.20896718468306197,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "NY",
+      "top_guest": "Bernie Sanders",
+      "frame_contrib": 3.8679122396950762,
+      "n_shows": 25,
+      "n_events": 36
+    },
+    {
+      "state": "NC",
+      "top_guest": "Kevin Brady",
+      "frame_contrib": 1.3517981476013743,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "ND",
+      "top_guest": "Neal Bawa",
+      "frame_contrib": 0.5408201161772013,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "OH",
+      "top_guest": "Jane Fonda",
+      "frame_contrib": 2.0277148051546736,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "OK",
+      "top_guest": "Bridget Phetasy",
+      "frame_contrib": 0.3171255093936175,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "OR",
+      "top_guest": "Zach Abraham",
+      "frame_contrib": 1.6014636134095692,
+      "n_shows": 3,
+      "n_events": 17
+    },
+    {
+      "state": "PA",
+      "top_guest": "Lori Chavez-DeRemer",
+      "frame_contrib": 1.4768426296773265,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "RI",
+      "top_guest": "Larry Johnson",
+      "frame_contrib": 0.28740849632483256,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "SC",
+      "top_guest": "Nela Richardson",
+      "frame_contrib": 0.3948888158798218,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "SD",
+      "top_guest": "Cassie",
+      "frame_contrib": 0.1474867008237106,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "TN",
+      "top_guest": "Danielle DiMartino Booth",
+      "frame_contrib": 1.060669024769644,
+      "n_shows": 11,
+      "n_events": 20
+    },
+    {
+      "state": "TX",
+      "top_guest": "Dan Morgan",
+      "frame_contrib": 1.7178691308526142,
+      "n_shows": 6,
+      "n_events": 9
+    },
+    {
+      "state": "UT",
+      "top_guest": "Chris Smalls",
+      "frame_contrib": 1.7261030151659087,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "VT",
+      "top_guest": "Joan C. Williams",
+      "frame_contrib": 0.6141333385687513,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "VA",
+      "top_guest": "Sam Dogen",
+      "frame_contrib": 1.3612726042601708,
+      "n_shows": 6,
+      "n_events": 6
+    },
+    {
+      "state": "WA",
+      "top_guest": "Chris Smalls",
+      "frame_contrib": 5.399532771554133,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "WV",
+      "top_guest": "Dave Ramsey",
+      "frame_contrib": 0.1547492279562951,
+      "n_shows": 6,
+      "n_events": 6
+    },
+    {
+      "state": "WI",
+      "top_guest": "John Fuglesang",
+      "frame_contrib": 2.04008047609035,
+      "n_shows": 3,
+      "n_events": 9
+    },
+    {
+      "state": "WY",
+      "top_guest": "Greg Casar",
+      "frame_contrib": 0.09812638417563654,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "DC",
+      "top_guest": "Lori Chavez-DeRemer",
+      "frame_contrib": 0.41362112860050426,
+      "n_shows": 3,
+      "n_events": 3
+    }
+  ],
+  "SUPPLY_SHOCK": [
+    {
+      "state": "AL",
+      "top_guest": "Craig Fuller",
+      "frame_contrib": 0.7886562043197644,
+      "n_shows": 4,
+      "n_events": 5
+    },
+    {
+      "state": "AK",
+      "top_guest": "Maggie Goodlander",
+      "frame_contrib": 0.14000157291273435,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "AZ",
+      "top_guest": "Ryan Petersen",
+      "frame_contrib": 0.8110889719342285,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "AR",
+      "top_guest": "Ed",
+      "frame_contrib": 0.3516746179724964,
+      "n_shows": 7,
+      "n_events": 7
+    },
+    {
+      "state": "CA",
+      "top_guest": "Craig Fuller",
+      "frame_contrib": 7.45718511841038,
+      "n_shows": 4,
+      "n_events": 5
+    },
+    {
+      "state": "CO",
+      "top_guest": "Ryan Petersen",
+      "frame_contrib": 1.4868437513622734,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "CT",
+      "top_guest": "Elena",
+      "frame_contrib": 1.931666688801823,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "DE",
+      "top_guest": "Jack Ablin",
+      "frame_contrib": 0.2994854813504194,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "FL",
+      "top_guest": "Cassie",
+      "frame_contrib": 1.9236428729596744,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "GA",
+      "top_guest": "Craig Fuller",
+      "frame_contrib": 0.7934534773080049,
+      "n_shows": 4,
+      "n_events": 5
+    },
+    {
+      "state": "HI",
+      "top_guest": "Rich",
+      "frame_contrib": 0.043009658242444085,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "ID",
+      "top_guest": "Tim Burchett",
+      "frame_contrib": 0.3352138032535438,
+      "n_shows": 14,
+      "n_events": 17
+    },
+    {
+      "state": "IL",
+      "top_guest": "Ryan Petersen",
+      "frame_contrib": 0.9995561636393187,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "IN",
+      "top_guest": "Lara Trump",
+      "frame_contrib": 0.3735152085845227,
+      "n_shows": 7,
+      "n_events": 11
+    },
+    {
+      "state": "IA",
+      "top_guest": "Chris Smalls",
+      "frame_contrib": 0.4006955864013366,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "KS",
+      "top_guest": "Maggie Goodlander",
+      "frame_contrib": 0.707841431722045,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "KY",
+      "top_guest": "Alex Newman",
+      "frame_contrib": 0.08070796954536999,
+      "n_shows": 5,
+      "n_events": 5
+    },
+    {
+      "state": "LA",
+      "top_guest": "Elijah Schaffer",
+      "frame_contrib": 0.33409521311015183,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "ME",
+      "top_guest": "Cassie",
+      "frame_contrib": 0.042519357321350607,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "MD",
+      "top_guest": "Chris Smalls",
+      "frame_contrib": 0.759527454820444,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "MA",
+      "top_guest": "Craig Fuller",
+      "frame_contrib": 0.6640011927236834,
+      "n_shows": 4,
+      "n_events": 5
+    },
+    {
+      "state": "MI",
+      "top_guest": "Craig Fuller",
+      "frame_contrib": 1.1762706122344726,
+      "n_shows": 4,
+      "n_events": 5
+    },
+    {
+      "state": "MN",
+      "top_guest": "Craig Fuller",
+      "frame_contrib": 4.053632297239178,
+      "n_shows": 4,
+      "n_events": 5
+    },
+    {
+      "state": "MS",
+      "top_guest": "Rick Smith",
+      "frame_contrib": 0.06971086087933116,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "MO",
+      "top_guest": "Marjorie Taylor Greene",
+      "frame_contrib": 0.2910572002722423,
+      "n_shows": 29,
+      "n_events": 36
+    },
+    {
+      "state": "MT",
+      "top_guest": "Craig Fuller",
+      "frame_contrib": 0.08768725923549098,
+      "n_shows": 4,
+      "n_events": 5
+    },
+    {
+      "state": "NE",
+      "top_guest": "Craig Fuller",
+      "frame_contrib": 0.8156419772168864,
+      "n_shows": 4,
+      "n_events": 5
+    },
+    {
+      "state": "NV",
+      "top_guest": "Craig Fuller",
+      "frame_contrib": 0.7421605924236273,
+      "n_shows": 4,
+      "n_events": 5
+    },
+    {
+      "state": "NH",
+      "top_guest": "Caitlin Collins",
+      "frame_contrib": 0.08304861807409027,
+      "n_shows": 7,
+      "n_events": 19
+    },
+    {
+      "state": "NJ",
+      "top_guest": "Ryan Petersen",
+      "frame_contrib": 1.6607056099172528,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "NM",
+      "top_guest": "Emily Sturge",
+      "frame_contrib": 0.1670385230649007,
+      "n_shows": 3,
+      "n_events": 4
+    },
+    {
+      "state": "NY",
+      "top_guest": "Craig Fuller",
+      "frame_contrib": 2.104224569665965,
+      "n_shows": 4,
+      "n_events": 5
+    },
+    {
+      "state": "NC",
+      "top_guest": "Craig Fuller",
+      "frame_contrib": 2.4317854878371814,
+      "n_shows": 4,
+      "n_events": 5
+    },
+    {
+      "state": "ND",
+      "top_guest": "Neal Bawa",
+      "frame_contrib": 0.1005350649356842,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "OH",
+      "top_guest": "Craig Fuller",
+      "frame_contrib": 1.4591311049057338,
+      "n_shows": 4,
+      "n_events": 5
+    },
+    {
+      "state": "OK",
+      "top_guest": "Ed",
+      "frame_contrib": 0.5485623077280961,
+      "n_shows": 7,
+      "n_events": 7
+    },
+    {
+      "state": "OR",
+      "top_guest": "Craig Fuller",
+      "frame_contrib": 1.1532458575386282,
+      "n_shows": 4,
+      "n_events": 5
+    },
+    {
+      "state": "PA",
+      "top_guest": "Bill Browder",
+      "frame_contrib": 0.5608101471963797,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "RI",
+      "top_guest": "Matt Taibbi",
+      "frame_contrib": 0.13499603541958125,
+      "n_shows": 6,
+      "n_events": 6
+    },
+    {
+      "state": "SC",
+      "top_guest": "Craig Fuller",
+      "frame_contrib": 0.4531344317871592,
+      "n_shows": 4,
+      "n_events": 5
+    },
+    {
+      "state": "SD",
+      "top_guest": "Craig Fuller",
+      "frame_contrib": 0.7139142190121445,
+      "n_shows": 4,
+      "n_events": 5
+    },
+    {
+      "state": "TN",
+      "top_guest": "Craig Fuller",
+      "frame_contrib": 0.7757410679353606,
+      "n_shows": 4,
+      "n_events": 5
+    },
+    {
+      "state": "TX",
+      "top_guest": "Craig Fuller",
+      "frame_contrib": 1.9439833861363816,
+      "n_shows": 4,
+      "n_events": 5
+    },
+    {
+      "state": "UT",
+      "top_guest": "Chris Smalls",
+      "frame_contrib": 0.8376407908662309,
+      "n_shows": 3,
+      "n_events": 3
+    },
+    {
+      "state": "VT",
+      "top_guest": "Hunter Thompson",
+      "frame_contrib": 0.056036531567000426,
+      "n_shows": 5,
+      "n_events": 5
+    },
+    {
+      "state": "VA",
+      "top_guest": "Craig Fuller",
+      "frame_contrib": 0.4781565301939542,
+      "n_shows": 4,
+      "n_events": 5
+    },
+    {
+      "state": "WA",
+      "top_guest": "Craig Fuller",
+      "frame_contrib": 2.9072802041357817,
+      "n_shows": 4,
+      "n_events": 5
+    },
+    {
+      "state": "WV",
+      "top_guest": "Tommy Tuberville",
+      "frame_contrib": 0.1264376928713329,
+      "n_shows": 13,
+      "n_events": 15
+    },
+    {
+      "state": "WI",
+      "top_guest": "Neal Bawa",
+      "frame_contrib": 0.5911714401716986,
+      "n_shows": 4,
+      "n_events": 4
+    },
+    {
+      "state": "WY",
+      "top_guest": "Sean Duffy",
+      "frame_contrib": 0.03575624237935182,
+      "n_shows": 18,
+      "n_events": 22
+    },
+    {
+      "state": "DC",
+      "top_guest": "Ryan Petersen",
+      "frame_contrib": 0.1253351679264356,
+      "n_shows": 3,
+      "n_events": 3
+    }
+  ]
+}

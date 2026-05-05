@@ -5,6 +5,8 @@ import type {
   GuestSummary,
   StateMonthDose,
   TopShowByState,
+  TopGuestByState,
+  TopGuestPerFrame,
 } from '../types';
 
 let eventsCache: InjectionEvent[] | null = null;
@@ -14,6 +16,9 @@ let guestsCache: GuestSummary[] | null = null;
 let doseCache: StateMonthDose[] | null = null;
 let topShowsCache: TopShowByState[] | null = null;
 let topShowsAbsoluteCache: TopShowByState[] | null = null;
+let topGuestsOverallCache: TopGuestByState[] | null = null;
+let topGuestsDistinctiveCache: TopGuestByState[] | null = null;
+let topGuestsByFrameCache: Record<string, TopGuestPerFrame[]> | null = null;
 
 async function fetchJson<T>(path: string): Promise<T> {
   const res = await fetch(path);
@@ -77,4 +82,26 @@ export async function loadTopShowsByState(
   }
   if (!topShowsCache) topShowsCache = await fetchJson('/data/top_show_per_state.json');
   return topShowsCache!;
+}
+
+export async function loadTopGuestsByState(
+  kind: 'overall' | 'distinctive' = 'overall',
+): Promise<TopGuestByState[]> {
+  if (kind === 'distinctive') {
+    if (!topGuestsDistinctiveCache) {
+      topGuestsDistinctiveCache = await fetchJson('/data/top_guest_per_state_distinctive.json');
+    }
+    return topGuestsDistinctiveCache!;
+  }
+  if (!topGuestsOverallCache) {
+    topGuestsOverallCache = await fetchJson('/data/top_guest_per_state_overall.json');
+  }
+  return topGuestsOverallCache!;
+}
+
+export async function loadTopGuestsByFrame(): Promise<Record<string, TopGuestPerFrame[]>> {
+  if (!topGuestsByFrameCache) {
+    topGuestsByFrameCache = await fetchJson('/data/top_guest_per_state_by_frame.json');
+  }
+  return topGuestsByFrameCache!;
 }
