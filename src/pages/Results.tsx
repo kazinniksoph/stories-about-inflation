@@ -131,7 +131,7 @@ export default function Results() {
         <div className="space-y-3">
           <div className="rounded-md p-4" style={{ background: `${FRAME_COLORS.GEOPOLITICAL}10`, borderLeft: `3px solid ${FRAME_COLORS.GEOPOLITICAL}` }}>
             <div className="flex items-baseline justify-between mb-1">
-              <h4 className="text-sm font-semibold text-stone-900">Geopolitical — cleanest causal evidence</h4>
+              <h4 className="text-sm font-semibold text-stone-900">Geopolitical: cleanest causal evidence</h4>
               <span className="text-xs font-mono text-stone-500">−0.16 pp / SD</span>
             </div>
             <p className="text-xs text-stone-600 leading-relaxed">
@@ -141,14 +141,14 @@ export default function Results() {
               directionally preserved (region × month FE, lag-only, respondent-level,
               lagged-Y placebo, future-dose placebo, share-orthogonality, Rotemberg
               decomposition), and the host-as-carrier placebo decisively fails to
-              replicate the result — the effect is identifying carrier-borne content,
+              replicate the result, which means the effect is identifying carrier-borne content,
               not the show's typical programming.
             </p>
           </div>
 
           <div className="rounded-md p-4" style={{ background: `${FRAME_COLORS.PARTISAN_BLAME}10`, borderLeft: `3px solid ${FRAME_COLORS.PARTISAN_BLAME}` }}>
             <div className="flex items-baseline justify-between mb-1">
-              <h4 className="text-sm font-semibold text-stone-900">Partisan blame — correlationally robust, causally qualified</h4>
+              <h4 className="text-sm font-semibold text-stone-900">Partisan blame: correlationally robust, causally qualified</h4>
               <span className="text-xs font-mono text-stone-500">+0.15 pp / SD</span>
             </div>
             <p className="text-xs text-stone-600 leading-relaxed">
@@ -166,7 +166,7 @@ export default function Results() {
 
           <div className="rounded-md p-4" style={{ background: `${FRAME_COLORS.HOUSING_STRUCTURAL}10`, borderLeft: `3px solid ${FRAME_COLORS.HOUSING_STRUCTURAL}` }}>
             <div className="flex items-baseline justify-between mb-1">
-              <h4 className="text-sm font-semibold text-stone-900">Housing structural — show-context exposure</h4>
+              <h4 className="text-sm font-semibold text-stone-900">Housing structural: show-context exposure</h4>
               <span className="text-xs font-mono text-stone-500">−0.13 pp / SD</span>
             </div>
             <p className="text-xs text-stone-600 leading-relaxed">
@@ -181,7 +181,7 @@ export default function Results() {
           </div>
 
           <div className="rounded-md p-4 bg-stone-50" style={{ borderLeft: '3px solid #d6d3d1' }}>
-            <h4 className="text-sm font-semibold text-stone-700 mb-1">Fed failure, supply shock, wage-price spiral — null</h4>
+            <h4 className="text-sm font-semibold text-stone-700 mb-1">Fed failure, supply shock, wage-price spiral: null</h4>
             <p className="text-xs text-stone-600 leading-relaxed">
               These three stories do not robustly affect 1-year expectations in the
               headline regression. Supply shock and wage-price spiral are signed
@@ -259,7 +259,7 @@ export default function Results() {
                 <td className="py-2 px-3 text-right font-mono text-stone-700">23.1%</td>
                 <td className="py-2 px-3 text-right font-mono text-stone-700">71.3%</td>
                 <td className="py-2 px-3 text-right font-mono text-stone-700">0.353</td>
-                <td className="py-2 px-3 text-right font-mono text-stone-700">—</td>
+                <td className="py-2 px-3 text-right font-mono text-stone-700">-</td>
               </tr>
               <tr className="border-b border-stone-50">
                 <td className="py-2 px-3 text-stone-700 font-medium">Political</td>
@@ -267,7 +267,7 @@ export default function Results() {
                 <td className="py-2 px-3 text-right font-mono text-stone-700">5.5%</td>
                 <td className="py-2 px-3 text-right font-mono text-stone-700">93.2%</td>
                 <td className="py-2 px-3 text-right font-mono text-stone-700">0.379</td>
-                <td className="py-2 px-3 text-right font-mono text-stone-700">—</td>
+                <td className="py-2 px-3 text-right font-mono text-stone-700">-</td>
               </tr>
               <tr>
                 <td className="py-2 px-3 text-stone-400 text-xs italic" colSpan={6}>
@@ -285,7 +285,7 @@ export default function Results() {
         expectation when its residents hear more of a given story. The variation
         in exposure comes from guest travel across shows with different
         listener geographies, not from local economic conditions. The treatment
-        bundles the messenger and the message — only geopolitical clears every
+        bundles the messenger and the message. Only geopolitical clears every
         validity check, partisan blame is qualified by ideology and dose
         autocorrelation, and housing reads as a show-context effect. Coefficients
         are in percentage points per unit of cumulative three-month narrative

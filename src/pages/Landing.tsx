@@ -35,11 +35,11 @@ export default function Landing() {
 
   // Episode metadata occasionally tags a discussed subject as a guest (the paper
   // excludes "AOC / Ocasio-Cortez" by name for the same reason; Trump is the
-  // most prominent additional case — appearances on critique shows like David
+  // most prominent additional case, since appearances on critique shows like David
   // Pakman or news roundups like Bloomberg News Now are not interviews).
   const SUBJECT_NOT_GUEST = new Set(['Donald Trump', 'AOC', 'Ocasio-Cortez', 'AOC / Ocasio-Cortez']);
 
-  // Cap at 2 carriers per frame, sorted by overall volume — without this,
+  // Cap at 2 carriers per frame, sorted by overall volume. Without this,
   // PARTISAN_BLAME (~13k events vs ~700 per other frame) crowds out every
   // expert from housing, Fed-failure, geopolitical, etc.
   const topGuests: GuestSummary[] = [];
@@ -72,7 +72,7 @@ export default function Landing() {
           one that explains rising prices through specific economic mechanisms,
           another that attributes them to a political actor without spelling out
           a mechanism. The two channels differ in causal language, vocal
-          delivery, and listener retention — and exposure to story content
+          delivery, and listener retention, and exposure to story content
           moves household inflation expectations in story-specific ways. This
           dashboard lets you explore the data.
         </p>

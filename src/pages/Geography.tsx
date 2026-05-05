@@ -146,14 +146,14 @@ export default function Geography() {
           {mapVariant === 'distinctive' ? (
             <>
               For each state, the U.S.-majority podcast whose listeners are most
-              disproportionately based there — surfaces small, locally concentrated
+              disproportionately based there. Surfaces small, locally concentrated
               shows. Tile shading scales with that state's share of the show's U.S.
               audience.
             </>
           ) : (
             <>
               For each state, the U.S.-majority podcast with the most listeners in
-              that state in absolute terms — surfaces big national shows. Tile
+              that state in absolute terms. Surfaces big national shows. Tile
               shading scales with that state's share of the show's U.S. audience
               (large national shows often have a low share even when they're the
               top show).

@@ -175,7 +175,7 @@ export default function Explorer() {
                 <div className="text-sm text-stone-500 tabular-nums">{formatDate(ev.posted_at)}</div>
                 <div className="text-sm text-stone-500 tabular-nums">{ev.reach_score}</div>
                 <div className="text-sm text-stone-500 tabular-nums">
-                  {ev.arousal != null ? formatNumber(ev.arousal, 3) : '—'}
+                  {ev.arousal != null ? formatNumber(ev.arousal, 3) : '-'}
                 </div>
               </button>
 
@@ -234,16 +234,16 @@ export default function Explorer() {
                     <div className="grid grid-cols-3 gap-3 text-xs">
                       <div>
                         <span className="text-stone-400">Vocal Arousal</span>
-                        <p className="font-mono text-stone-900 mt-0.5">{ev.arousal != null ? formatNumber(ev.arousal, 3) : '—'}</p>
+                        <p className="font-mono text-stone-900 mt-0.5">{ev.arousal != null ? formatNumber(ev.arousal, 3) : '-'}</p>
                       </div>
                       <div>
                         <span className="text-stone-400">Vocal Valence</span>
-                        <p className="font-mono text-stone-900 mt-0.5">{ev.valence != null ? formatNumber(ev.valence, 3) : '—'}</p>
+                        <p className="font-mono text-stone-900 mt-0.5">{ev.valence != null ? formatNumber(ev.valence, 3) : '-'}</p>
                       </div>
                       <div>
                         <span className="text-stone-400">Completion Rate</span>
                         <p className="font-mono text-stone-900 mt-0.5">
-                          {ev.completion_rate != null ? `${(ev.completion_rate * 100).toFixed(1)}%` : '—'}
+                          {ev.completion_rate != null ? `${(ev.completion_rate * 100).toFixed(1)}%` : '-'}
                         </p>
                       </div>
                     </div>

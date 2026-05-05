@@ -114,12 +114,12 @@ export const FRAME_DESCRIPTIONS: Record<string, string> = {
   GEOPOLITICAL: 'Inflation blamed on foreign conflicts, tariffs, trade wars, oil shocks, or sanctions.',
   PARTISAN_BLAME: 'Inflation attributed to a political party or leader (e.g., "Biden destroyed the economy") without specifying an economic mechanism.',
   HOUSING_STRUCTURAL: 'Inflation linked to housing supply constraints, zoning, construction costs, or demographic shifts in housing demand.',
-  FED_FAILURE: 'Inflation blamed on the Federal Reserve — too much money printing, keeping rates too low, or losing credibility.',
+  FED_FAILURE: 'Inflation blamed on the Federal Reserve, with critiques of too much money printing, keeping rates too low, or losing credibility.',
   SUPPLY_SHOCK: 'Inflation caused by supply-chain disruptions, shortages, shipping delays, or input cost spikes.',
   DEMAND_EXCESS: 'Inflation driven by too much consumer spending, stimulus checks, or overheated demand.',
   CORPORATE_MARKUP: 'Inflation blamed on corporate greed, price gouging, or monopoly power.',
   WAGE_SPIRAL: 'Inflation driven by a wage–price feedback loop where rising wages push up costs which push up wages.',
-  TRANSITORY: 'Inflation described as temporary — a short-lived blip that will resolve on its own.',
+  TRANSITORY: 'Inflation described as temporary, a short-lived blip that will resolve on its own.',
 };
 
 // The three frames significant at conventional 5% in the 1Y headline (paper §5.3):
