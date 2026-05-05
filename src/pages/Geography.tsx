@@ -249,7 +249,7 @@ export default function Geography() {
                       return (
                         <div
                           key={ci}
-                          className="rounded-sm border border-stone-200 bg-stone-50 aspect-[4/3] flex items-center justify-center text-[10px] font-mono text-stone-400"
+                          className="rounded-sm border border-stone-200 bg-stone-50 aspect-square flex items-center justify-center text-[10px] font-mono text-stone-400"
                         >
                           {st}
                         </div>
@@ -267,25 +267,21 @@ export default function Geography() {
                         key={ci}
                         to={`/explorer?q=${encodeURIComponent(entry.top_show)}`}
                         title={`${STATE_NAMES[st] || st}: ${entry.top_show} (${(entry.state_share * 100).toFixed(1)}% of show's US audience)`}
-                        className="rounded-sm border border-stone-200 aspect-[4/3] p-1 flex flex-col gap-1 hover:border-stone-400 transition-colors group"
+                        className="relative rounded-sm border border-stone-200 aspect-square p-1 flex flex-col items-center justify-start hover:border-stone-400 transition-colors group overflow-hidden"
                         style={{ backgroundColor: bg, color: textColor }}
                       >
-                        <div className="flex items-center justify-between text-[9px] font-mono opacity-80">
-                          <span>{st}</span>
-                          <span className="tabular-nums">{(entry.state_share * 100).toFixed(0)}%</span>
-                        </div>
-                        <div className="flex-1 flex items-center gap-1 min-h-0">
-                          <img
-                            src={`/show_logos/${showSlug(entry.top_show)}.jpg`}
-                            alt=""
-                            loading="lazy"
-                            onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
-                            className="rounded-sm shrink-0 object-cover bg-white/40"
-                            style={{ width: 22, height: 22 }}
-                          />
-                          <div className="text-[10px] leading-tight font-medium line-clamp-3 group-hover:underline decoration-1 underline-offset-2">
-                            {entry.top_show}
-                          </div>
+                        <div className="absolute top-0.5 left-1 text-[9px] font-mono opacity-80 z-10">{st}</div>
+                        <div className="absolute top-0.5 right-1 text-[9px] font-mono tabular-nums opacity-80 z-10">{(entry.state_share * 100).toFixed(0)}%</div>
+                        <img
+                          src={`/show_logos/${showSlug(entry.top_show)}.jpg`}
+                          alt=""
+                          loading="lazy"
+                          onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+                          className="rounded-sm object-cover bg-white/40 mt-3"
+                          style={{ width: '60%', aspectRatio: '1 / 1' }}
+                        />
+                        <div className="text-[9px] leading-tight font-medium text-center line-clamp-2 group-hover:underline decoration-1 underline-offset-2 mt-1 px-0.5">
+                          {entry.top_show}
                         </div>
                       </Link>
                     );
@@ -295,7 +291,7 @@ export default function Geography() {
                       return (
                         <div
                           key={ci}
-                          className="rounded-sm border border-stone-200 bg-stone-50 aspect-[4/3] flex items-center justify-center text-[10px] font-mono text-stone-400"
+                          className="rounded-sm border border-stone-200 bg-stone-50 aspect-square flex items-center justify-center text-[10px] font-mono text-stone-400"
                         >
                           {st}
                         </div>
@@ -308,19 +304,37 @@ export default function Geography() {
                     const alphaPct = Math.round(15 + t * 60);
                     const bg = `rgba(95, 47, 95, ${alphaPct / 100})`;
                     const textColor = t > 0.55 ? '#ffffff' : '#3a1f3a';
+                    // Initials badge as a visual stand-in for guest "art"
+                    const initials = entry.top_guest
+                      .split(/\s+/)
+                      .filter(Boolean)
+                      .map(w => w[0])
+                      .join('')
+                      .slice(0, 3)
+                      .toUpperCase();
                     return (
                       <Link
                         key={ci}
                         to={`/explorer?q=${encodeURIComponent(entry.top_guest)}`}
                         title={`${STATE_NAMES[st] || st}: ${entry.top_guest} (${entry.n_events} events on ${entry.n_shows} shows; ${(entry.share_in_state * 100).toFixed(1)}% of guest's reach)`}
-                        className="rounded-sm border border-stone-200 aspect-[4/3] p-1 flex flex-col justify-between hover:border-stone-400 transition-colors group"
+                        className="relative rounded-sm border border-stone-200 aspect-square p-1 flex flex-col items-center justify-start hover:border-stone-400 transition-colors group overflow-hidden"
                         style={{ backgroundColor: bg, color: textColor }}
                       >
-                        <div className="flex items-center justify-between text-[9px] font-mono opacity-80">
-                          <span>{st}</span>
-                          <span className="tabular-nums">{(entry.share_in_state * 100).toFixed(0)}%</span>
+                        <div className="absolute top-0.5 left-1 text-[9px] font-mono opacity-80 z-10">{st}</div>
+                        <div className="absolute top-0.5 right-1 text-[9px] font-mono tabular-nums opacity-80 z-10">{(entry.share_in_state * 100).toFixed(0)}%</div>
+                        <div
+                          className="rounded-full flex items-center justify-center mt-3 font-semibold"
+                          style={{
+                            width: '60%',
+                            aspectRatio: '1 / 1',
+                            backgroundColor: textColor === '#ffffff' ? 'rgba(255,255,255,0.18)' : 'rgba(95,47,95,0.12)',
+                            fontSize: '0.65rem',
+                            letterSpacing: '0.02em',
+                          }}
+                        >
+                          {initials}
                         </div>
-                        <div className="text-[10px] leading-tight font-medium line-clamp-3 group-hover:underline decoration-1 underline-offset-2">
+                        <div className="text-[9px] leading-tight font-medium text-center line-clamp-2 group-hover:underline decoration-1 underline-offset-2 mt-1 px-0.5">
                           {entry.top_guest}
                         </div>
                       </Link>
