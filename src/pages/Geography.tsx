@@ -8,6 +8,15 @@ import type {
 } from '../types';
 import { FRAME_COLORS, FRAME_LABELS, FOCUS_FRAMES } from '../types';
 
+// Match the Python slug() used by build_state_map.py for cover-art file names
+function showSlug(name: string): string {
+  let out = '';
+  for (const ch of name.toLowerCase()) {
+    out += /[a-z0-9]/.test(ch) ? ch : '_';
+  }
+  return out.slice(0, 80);
+}
+
 // Standard tile-grid US layout (50 states + DC). Empty cells are gaps.
 const TILE_GRID: (string | null)[][] = [
   ['AK', null, null, null, null, null, null, null, null, null, 'ME'],
@@ -258,15 +267,25 @@ export default function Geography() {
                         key={ci}
                         to={`/explorer?q=${encodeURIComponent(entry.top_show)}`}
                         title={`${STATE_NAMES[st] || st}: ${entry.top_show} (${(entry.state_share * 100).toFixed(1)}% of show's US audience)`}
-                        className="rounded-sm border border-stone-200 aspect-[4/3] p-1 flex flex-col justify-between hover:border-stone-400 transition-colors group"
+                        className="rounded-sm border border-stone-200 aspect-[4/3] p-1 flex flex-col gap-1 hover:border-stone-400 transition-colors group"
                         style={{ backgroundColor: bg, color: textColor }}
                       >
                         <div className="flex items-center justify-between text-[9px] font-mono opacity-80">
                           <span>{st}</span>
                           <span className="tabular-nums">{(entry.state_share * 100).toFixed(0)}%</span>
                         </div>
-                        <div className="text-[10px] leading-tight font-medium line-clamp-3 group-hover:underline decoration-1 underline-offset-2">
-                          {entry.top_show}
+                        <div className="flex-1 flex items-center gap-1 min-h-0">
+                          <img
+                            src={`/show_logos/${showSlug(entry.top_show)}.jpg`}
+                            alt=""
+                            loading="lazy"
+                            onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+                            className="rounded-sm shrink-0 object-cover bg-white/40"
+                            style={{ width: 22, height: 22 }}
+                          />
+                          <div className="text-[10px] leading-tight font-medium line-clamp-3 group-hover:underline decoration-1 underline-offset-2">
+                            {entry.top_show}
+                          </div>
                         </div>
                       </Link>
                     );
