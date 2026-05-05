@@ -67,11 +67,14 @@ export default function Landing() {
         <p className="leading-relaxed text-sm" style={{ color: 'var(--text)' }}>
           When people listen to podcasts, they hear different stories about why
           prices are rising: tariffs, government spending, housing shortages,
-          the Fed. This research asks whether those stories actually change what
-          people expect inflation to be. Using over 350,000 podcast transcripts
-          and a natural experiment based on guest appearances across shows,
-          we find that they do, and that the specific story matters.
-          This dashboard lets you explore the data.
+          the Fed. Using over 350,000 podcast transcripts, this research finds
+          that recurring inflation discussion sorts into <em>two channels</em>:
+          one that explains rising prices through specific economic mechanisms,
+          another that attributes them to a political actor without spelling out
+          a mechanism. The two channels differ in causal language, vocal
+          delivery, and listener retention — and exposure to story content
+          moves household inflation expectations in story-specific ways. This
+          dashboard lets you explore the data.
         </p>
       </div>
 
@@ -127,9 +130,9 @@ export default function Landing() {
         <p className="text-xs text-stone-500 mb-3">
           Each guest appearance is classified by its dominant inflation story:
           the explanation the guest emphasizes most. The bars below show how many
-          appearances fall into each story. Faded stories did not have a
-          statistically significant effect on inflation expectations in the
-          causal analysis.
+          appearances fall into each story. Faded stories did not produce a
+          statistically significant headline effect on inflation expectations in
+          the causal analysis.
         </p>
         <div className="space-y-2">
           {Object.entries(frameCounts)
@@ -157,8 +160,13 @@ export default function Landing() {
               );
             })}
         </div>
-        <p className="text-xs text-stone-400 mt-3">
-          ✓ = frame with a statistically significant effect on inflation expectations.
+        <p className="text-xs text-stone-400 mt-3 leading-relaxed">
+          ✓ = frame with a statistically significant headline effect on inflation
+          expectations. Geopolitical exposure has the cleanest causal evidence
+          (every robustness check passes); partisan blame is correlationally
+          robust but qualified by within-state autocorrelation and ideology
+          interactions; housing structural is best read as a show-context
+          exposure result. See <Link to="/results" className="underline decoration-stone-300 underline-offset-2">Results</Link> for details.
         </p>
       </div>
 

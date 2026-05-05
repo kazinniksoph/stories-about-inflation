@@ -98,10 +98,12 @@ export default function Results() {
       <div>
         <h2 className="text-xl font-bold text-stone-900">Does hearing these stories change expectations?</h2>
         <p className="text-sm text-stone-500 mt-1 leading-relaxed">
-          The charts below show causal estimates: how much does a state's average
-          inflation expectation change when its residents hear more of a given
-          story? Colored bars are statistically significant (p &lt; 0.05); gray
-          bars are not. The whiskers show 95% confidence intervals.
+          The charts below show story-by-story estimates: how much does a state's
+          average inflation expectation change when its residents hear more of a
+          given story? Colored bars are statistically significant in the headline
+          regression (p &lt; 0.05); gray bars are not. The whiskers show 95%
+          confidence intervals. The three colored stories differ in how
+          confidently the effect can be read as causal (see notes below).
         </p>
       </div>
 
@@ -116,6 +118,78 @@ export default function Results() {
           title="3-Year Expected Inflation"
           subtitle="SCE 3-year density mean, cumulative 3-month dose"
         />
+      </div>
+
+      <div className="rounded-lg border border-stone-200 bg-white p-5">
+        <h3 className="text-sm font-semibold text-stone-900">Story by story: how confidently can each effect be read as causal?</h3>
+        <p className="text-xs text-stone-500 mt-0.5 mb-4 leading-relaxed">
+          The three colored bars above are all statistically significant at the 1% level
+          in the headline regression. They differ in how cleanly the effect can be read
+          as the causal impact of <em>story content</em> rather than something correlated
+          with it.
+        </p>
+        <div className="space-y-3">
+          <div className="rounded-md p-4" style={{ background: `${FRAME_COLORS.GEOPOLITICAL}10`, borderLeft: `3px solid ${FRAME_COLORS.GEOPOLITICAL}` }}>
+            <div className="flex items-baseline justify-between mb-1">
+              <h4 className="text-sm font-semibold text-stone-900">Geopolitical — cleanest causal evidence</h4>
+              <span className="text-xs font-mono text-stone-500">−0.16 pp / SD</span>
+            </div>
+            <p className="text-xs text-stone-600 leading-relaxed">
+              A one-standard-deviation increase in cumulative 3-month exposure to oil
+              shocks, sanctions, war, and trade conflict lowers 1-year expected inflation
+              by about 0.16 percentage points. Every robustness check passes or is
+              directionally preserved (region × month FE, lag-only, respondent-level,
+              lagged-Y placebo, future-dose placebo, share-orthogonality, Rotemberg
+              decomposition), and the host-as-carrier placebo decisively fails to
+              replicate the result — the effect is identifying carrier-borne content,
+              not the show's typical programming.
+            </p>
+          </div>
+
+          <div className="rounded-md p-4" style={{ background: `${FRAME_COLORS.PARTISAN_BLAME}10`, borderLeft: `3px solid ${FRAME_COLORS.PARTISAN_BLAME}` }}>
+            <div className="flex items-baseline justify-between mb-1">
+              <h4 className="text-sm font-semibold text-stone-900">Partisan blame — correlationally robust, causally qualified</h4>
+              <span className="text-xs font-mono text-stone-500">+0.15 pp / SD</span>
+            </div>
+            <p className="text-xs text-stone-600 leading-relaxed">
+              Partisan-blame exposure raises 1-year expectations by about 0.15 pp per
+              standard deviation, with sign and significance preserved at three and five
+              years where mechanism stories fade. Two qualifications limit the causal
+              read: the dose is highly autocorrelated within state (lag-1 ρ = 0.62),
+              which makes the future-dose placebo mechanically uninformative; and adding
+              Trump-share × month fixed effects absorbs about half the coefficient. The
+              headline reflects a combination of carrier-content effects and
+              ideology-correlated time variation that state and month FE do not fully
+              separate.
+            </p>
+          </div>
+
+          <div className="rounded-md p-4" style={{ background: `${FRAME_COLORS.HOUSING_STRUCTURAL}10`, borderLeft: `3px solid ${FRAME_COLORS.HOUSING_STRUCTURAL}` }}>
+            <div className="flex items-baseline justify-between mb-1">
+              <h4 className="text-sm font-semibold text-stone-900">Housing structural — show-context exposure</h4>
+              <span className="text-xs font-mono text-stone-500">−0.13 pp / SD</span>
+            </div>
+            <p className="text-xs text-stone-600 leading-relaxed">
+              Housing exposure lowers 1-year expectations by about 0.13 pp per standard
+              deviation in the headline. But a messenger-vs-show test shows that within
+              show, carrier appearances do not raise housing-content activation above
+              the show's solo (no-guest) baseline. The dose is identifying <em>which
+              shows air housing-themed content</em>, not the incremental content guests
+              bring. The coefficient should be read as a show-context exposure result
+              rather than as a carrier-content effect.
+            </p>
+          </div>
+
+          <div className="rounded-md p-4 bg-stone-50" style={{ borderLeft: '3px solid #d6d3d1' }}>
+            <h4 className="text-sm font-semibold text-stone-700 mb-1">Fed failure, supply shock, wage-price spiral — null</h4>
+            <p className="text-xs text-stone-600 leading-relaxed">
+              These three stories do not robustly affect 1-year expectations in the
+              headline regression. Supply shock and wage-price spiral are signed
+              consistently with the mechanism channel (negative) but do not reach
+              conventional significance.
+            </p>
+          </div>
+        </div>
       </div>
 
       <div className="rounded-lg border border-stone-200 bg-white p-5">
@@ -208,14 +282,15 @@ export default function Results() {
       <div className="rounded-md bg-stone-100 border border-stone-200 p-4 text-xs text-stone-500 leading-relaxed">
         <strong className="text-stone-700">What these numbers mean, and what they don't.</strong>{' '}
         The estimates measure what happens to a state's average inflation
-        expectation when its residents hear more of a given story. They are
-        causal in the sense that the variation in exposure comes from guest
-        travel across shows, not from local economic conditions. But the
-        treatment bundles the messenger and the message: we cannot fully
-        separate whether it is the story itself or the person telling it that
-        moves beliefs. Coefficients are in percentage points per unit of
-        cumulative three-month narrative dose. See the paper for full
-        specification details, robustness checks, and limitations.
+        expectation when its residents hear more of a given story. The variation
+        in exposure comes from guest travel across shows with different
+        listener geographies, not from local economic conditions. The treatment
+        bundles the messenger and the message — only geopolitical clears every
+        validity check, partisan blame is qualified by ideology and dose
+        autocorrelation, and housing reads as a show-context effect. Coefficients
+        are in percentage points per unit of cumulative three-month narrative
+        dose. See the paper for full specification details, robustness checks,
+        and limitations.
       </div>
     </div>
   );
