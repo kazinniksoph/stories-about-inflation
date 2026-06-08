@@ -14,34 +14,38 @@ interface IVResult {
   sig: string;
 }
 
-// Coefficients sourced from output/inflation/replication/headline_cum_dose.csv
-// (1Y) and horizon_shape_results.csv (3Y density mean Q9c_mean). Filtered
-// carrier-IV corpus, N=2,687 state-month cells. SEs from the cluster-robust
-// regression with state and month fixed effects.
+// Coefficients from the paper's headline respondent-level regressions
+// (main_v6.tex, Table tab:cum_dose for the 1Y point forecast; tab:horizon_comparison
+// for the 3Y density mean). Respondent-level, N = 64,256 across 2,687 state-month
+// cells; state + month fixed effects, state-clustered SEs. Coefficients are per
+// unit of cumulative 3-month dose. Housing is analyzed separately as a show-context
+// exposure (see the Housing card below), so it is not shown in these carrier plots.
 const IV_1Y: IVResult[] = [
-  { frame: 'HOUSING_STRUCTURAL', label: 'Housing Structural', coef: -8.56, se: 2.94, p: 0.004, color: FRAME_COLORS.HOUSING_STRUCTURAL, sig: '***' },
-  { frame: 'GEOPOLITICAL', label: 'Geopolitical', coef: -5.03, se: 1.78, p: 0.005, color: FRAME_COLORS.GEOPOLITICAL, sig: '***' },
-  { frame: 'PARTISAN_BLAME', label: 'Partisan Blame', coef: 1.62, se: 0.59, p: 0.006, color: FRAME_COLORS.PARTISAN_BLAME, sig: '***' },
-  { frame: 'SUPPLY_SHOCK', label: 'Supply Shock', coef: -9.17, se: 5.56, p: 0.099, color: FRAME_COLORS.SUPPLY_SHOCK, sig: '*' },
-  { frame: 'WAGE_SPIRAL', label: 'Wage-Price Spiral', coef: -4.65, se: 4.16, p: 0.264, color: FRAME_COLORS.WAGE_SPIRAL, sig: '' },
-  { frame: 'FED_FAILURE', label: 'Fed Failure', coef: -3.12, se: 2.16, p: 0.150, color: FRAME_COLORS.FED_FAILURE, sig: '' },
+  { frame: 'GEOPOLITICAL', label: 'Geopolitical', coef: -3.64, se: 0.92, p: 0.001, color: FRAME_COLORS.GEOPOLITICAL, sig: '***' },
+  { frame: 'PARTISAN_BLAME', label: 'Partisan Blame', coef: 1.46, se: 0.34, p: 0.001, color: FRAME_COLORS.PARTISAN_BLAME, sig: '***' },
+  { frame: 'SUPPLY_SHOCK', label: 'Supply Shock', coef: -8.19, se: 3.21, p: 0.011, color: FRAME_COLORS.SUPPLY_SHOCK, sig: '**' },
+  { frame: 'FED_FAILURE', label: 'Fed Failure', coef: -2.27, se: 1.43, p: 0.112, color: FRAME_COLORS.FED_FAILURE, sig: '' },
+  { frame: 'WAGE_SPIRAL', label: 'Wage-Price Spiral', coef: 1.35, se: 3.21, p: 0.676, color: FRAME_COLORS.WAGE_SPIRAL, sig: '' },
 ];
 
+// 3Y density mean (Q9c). Coefficients and p-values from tab:horizon_comparison;
+// SEs are back-computed from the coefficient and p-value under a normal approximation.
 const IV_3Y: IVResult[] = [
-  { frame: 'HOUSING_STRUCTURAL', label: 'Housing Structural', coef: -5.03, se: 2.34, p: 0.032, color: FRAME_COLORS.HOUSING_STRUCTURAL, sig: '**' },
-  { frame: 'GEOPOLITICAL', label: 'Geopolitical', coef: -2.62, se: 1.29, p: 0.042, color: FRAME_COLORS.GEOPOLITICAL, sig: '**' },
-  { frame: 'PARTISAN_BLAME', label: 'Partisan Blame', coef: 1.33, se: 0.47, p: 0.005, color: FRAME_COLORS.PARTISAN_BLAME, sig: '***' },
-  { frame: 'SUPPLY_SHOCK', label: 'Supply Shock', coef: -7.31, se: 3.50, p: 0.037, color: FRAME_COLORS.SUPPLY_SHOCK, sig: '**' },
-  { frame: 'WAGE_SPIRAL', label: 'Wage-Price Spiral', coef: -5.15, se: 2.45, p: 0.036, color: FRAME_COLORS.WAGE_SPIRAL, sig: '**' },
-  { frame: 'FED_FAILURE', label: 'Fed Failure', coef: -0.78, se: 1.46, p: 0.591, color: FRAME_COLORS.FED_FAILURE, sig: '' },
+  { frame: 'GEOPOLITICAL', label: 'Geopolitical', coef: -1.34, se: 0.89, p: 0.134, color: FRAME_COLORS.GEOPOLITICAL, sig: '' },
+  { frame: 'PARTISAN_BLAME', label: 'Partisan Blame', coef: 0.99, se: 0.30, p: 0.001, color: FRAME_COLORS.PARTISAN_BLAME, sig: '***' },
+  { frame: 'SUPPLY_SHOCK', label: 'Supply Shock', coef: -5.00, se: 2.35, p: 0.033, color: FRAME_COLORS.SUPPLY_SHOCK, sig: '**' },
+  { frame: 'FED_FAILURE', label: 'Fed Failure', coef: -0.23, se: 1.07, p: 0.830, color: FRAME_COLORS.FED_FAILURE, sig: '' },
+  { frame: 'WAGE_SPIRAL', label: 'Wage-Price Spiral', coef: -1.00, se: 1.57, p: 0.526, color: FRAME_COLORS.WAGE_SPIRAL, sig: '' },
 ];
 
-// Geopolitical column from main_v4.tex tab:het_geopolitical (respondent-level
-// regressions with state and month FE, N=56,445).
+// Geopolitical column of the demographic-interaction table (main_v6.tex, appendix).
+// Respondent-level regressions with state and month FE. Because the average
+// geopolitical effect is negative, a more negative interaction means that group
+// responds more strongly to geopolitical exposure.
 const DEMOGRAPHICS = [
   { interaction: 'Dose × Female', coef: -3.11, se: 6.30, p: 0.621 },
-  { interaction: 'Dose × Republican lean', coef: -3.73, se: 1.74, p: 0.032 },
-  { interaction: 'Dose × High Numeracy', coef: -3.35, se: 1.24, p: 0.007 },
+  { interaction: 'Dose × Lower income', coef: -3.73, se: 1.74, p: 0.032 },
+  { interaction: 'Dose × High numeracy', coef: -3.35, se: 1.24, p: 0.007 },
 ];
 
 function CoefPlot({ data, title, subtitle }: { data: IVResult[]; title: string; subtitle: string }) {
@@ -111,7 +115,7 @@ export default function Results() {
         <CoefPlot
           data={IV_1Y}
           title="1-Year Expected Inflation"
-          subtitle="SCE 1-year point forecast, cumulative 3-month dose, N = 2,687 state-month cells"
+          subtitle="SCE 1-year point forecast, cumulative 3-month dose, respondent-level, N = 64,256"
         />
         <CoefPlot
           data={IV_3Y}
@@ -132,12 +136,12 @@ export default function Results() {
           <div className="rounded-md p-4" style={{ background: `${FRAME_COLORS.GEOPOLITICAL}10`, borderLeft: `3px solid ${FRAME_COLORS.GEOPOLITICAL}` }}>
             <div className="flex items-baseline justify-between mb-1">
               <h4 className="text-sm font-semibold text-stone-900">Geopolitical: cleanest causal evidence</h4>
-              <span className="text-xs font-mono text-stone-500">−0.16 pp / SD</span>
+              <span className="text-xs font-mono text-stone-500">−0.19 pp / SD</span>
             </div>
             <p className="text-xs text-stone-600 leading-relaxed">
               A one-standard-deviation increase in cumulative 3-month exposure to oil
               shocks, sanctions, war, and trade conflict lowers 1-year expected inflation
-              by about 0.16 percentage points. Every robustness check passes or is
+              by about 0.19 percentage points. Every robustness check passes or is
               directionally preserved (region × month FE, lag-only, respondent-level,
               lagged-Y placebo, future-dose placebo, share-orthogonality, Rotemberg
               decomposition), and the host-as-carrier placebo decisively fails to
@@ -148,45 +152,48 @@ export default function Results() {
 
           <div className="rounded-md p-4" style={{ background: `${FRAME_COLORS.PARTISAN_BLAME}10`, borderLeft: `3px solid ${FRAME_COLORS.PARTISAN_BLAME}` }}>
             <div className="flex items-baseline justify-between mb-1">
-              <h4 className="text-sm font-semibold text-stone-900">Partisan blame: correlationally robust, causally qualified</h4>
-              <span className="text-xs font-mono text-stone-500">+0.15 pp / SD</span>
+              <h4 className="text-sm font-semibold text-stone-900">Partisan blame: selection, not persuasion</h4>
+              <span className="text-xs font-mono text-stone-500">+0.21 pp / SD</span>
             </div>
             <p className="text-xs text-stone-600 leading-relaxed">
-              Partisan-blame exposure raises 1-year expectations by about 0.15 pp per
-              standard deviation, with sign and significance preserved at three and five
-              years where mechanism stories fade. Two qualifications limit the causal
-              read: the dose is highly autocorrelated within state (lag-1 ρ = 0.62),
-              which makes the future-dose placebo mechanically uninformative; and adding
-              Trump-share × month fixed effects absorbs about half the coefficient. The
-              headline reflects a combination of carrier-content effects and
-              ideology-correlated time variation that state and month FE do not fully
-              separate.
+              Partisan-blame exposure is associated with about 0.21 pp higher 1-year
+              expectations per standard deviation, and the association persists at three
+              and five years. But a Mundlak decomposition shows this reflects audience
+              sorting rather than persuasion. The between-listener term is large and
+              significant (people who habitually hear more blame expect higher inflation,
+              β₁ = +2.20, p = 0.005), while the within-listener term is null (hearing more
+              blame than usual does not move a given respondent, β₂ = −0.74, p = 0.11).
+              Partisan shows attract listeners who already expect higher inflation, so the
+              dose identifies who is listening rather than a causal effect of blame content.
             </p>
           </div>
 
           <div className="rounded-md p-4" style={{ background: `${FRAME_COLORS.HOUSING_STRUCTURAL}10`, borderLeft: `3px solid ${FRAME_COLORS.HOUSING_STRUCTURAL}` }}>
             <div className="flex items-baseline justify-between mb-1">
               <h4 className="text-sm font-semibold text-stone-900">Housing structural: show-context exposure</h4>
-              <span className="text-xs font-mono text-stone-500">−0.13 pp / SD</span>
+              <span className="text-xs font-mono text-stone-500">+0.20 pp / SD</span>
             </div>
             <p className="text-xs text-stone-600 leading-relaxed">
-              Housing exposure lowers 1-year expectations by about 0.13 pp per standard
-              deviation in the headline. But a messenger-vs-show test shows that within
-              show, carrier appearances do not raise housing-content activation above
-              the show's solo (no-guest) baseline. The dose is identifying <em>which
-              shows air housing-themed content</em>, not the incremental content guests
-              bring. The coefficient should be read as a show-context exposure result
-              rather than as a carrier-content effect.
+              Audiences more exposed to housing-focused programming hold somewhat
+              <em> higher</em> 1-year expectations, about +0.20 pp per standard deviation.
+              Housing does not fit the carrier design: a messenger-vs-show test shows that
+              guest appearances do not raise housing content above the show's solo
+              (no-guest) baseline, so exposure is measured from the show's own programming
+              rather than from guests. The association also weakens to insignificance once
+              Census-division × month fixed effects absorb regional housing-market trends,
+              so it is best read as a show-context correlation rather than a causal effect.
             </p>
           </div>
 
           <div className="rounded-md p-4 bg-stone-50" style={{ borderLeft: '3px solid #d6d3d1' }}>
-            <h4 className="text-sm font-semibold text-stone-700 mb-1">Fed failure, supply shock, wage-price spiral: null</h4>
+            <h4 className="text-sm font-semibold text-stone-700 mb-1">Supply shock, Fed failure, wage-price spiral: qualified or null</h4>
             <p className="text-xs text-stone-600 leading-relaxed">
-              These three stories do not robustly affect 1-year expectations in the
-              headline regression. Supply shock and wage-price spiral are signed
-              consistently with the mechanism channel (negative) but do not reach
-              conventional significance.
+              Supply shock is negative and significant (−0.19 pp per SD, the same size as
+              geopolitical), but the story is too rare to run the guest-versus-show test,
+              so it is reported as a robust correlation rather than a causal effect. Fed
+              failure and wage-price spiral do not robustly affect 1-year expectations:
+              Fed failure is a show-context story (guests do not lift Fed content above the
+              show baseline), and wage-price spiral is the rarest story in the data.
             </p>
           </div>
         </div>
@@ -196,10 +203,10 @@ export default function Results() {
         <h3 className="text-sm font-semibold text-stone-900">Who is most affected?</h3>
         <p className="text-xs text-stone-500 mt-0.5 mb-4">
           Does the geopolitical narrative effect differ by listener demographics?
-          A negative interaction means that group is <em>less</em> responsive;
-          positive means <em>more</em>. Republican-leaning and high-numeracy
-          respondents both absorb geopolitical exposure significantly less
-          than the average listener. N = 56,445.
+          Because the average geopolitical effect is negative, a <em>more negative</em>
+          interaction means that group responds <em>more</em> strongly. High-numeracy and
+          lower-income respondents respond significantly more strongly to geopolitical
+          exposure than the average listener; the gender interaction is not significant.
         </p>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
@@ -286,8 +293,9 @@ export default function Results() {
         in exposure comes from guest travel across shows with different
         listener geographies, not from local economic conditions. The treatment
         bundles the messenger and the message. Only geopolitical clears every
-        validity check, partisan blame is qualified by ideology and dose
-        autocorrelation, and housing reads as a show-context effect. Coefficients
+        validity check; partisan blame reflects audience selection rather than
+        persuasion (the within-listener decomposition is null); and housing reads
+        as a show-context correlation. Coefficients
         are in percentage points per unit of cumulative three-month narrative
         dose. See the paper for full specification details, robustness checks,
         and limitations.

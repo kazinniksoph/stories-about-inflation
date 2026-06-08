@@ -163,9 +163,9 @@ export default function Landing() {
         <p className="text-xs text-stone-400 mt-3 leading-relaxed">
           ✓ = frame with a statistically significant headline effect on inflation
           expectations. Geopolitical exposure has the cleanest causal evidence
-          (every robustness check passes); partisan blame is correlationally
-          robust but qualified by within-state autocorrelation and ideology
-          interactions; housing structural is best read as a show-context
+          (every robustness check passes); partisan blame is a robust association
+          but reflects audience selection rather than persuasion (a within-listener
+          decomposition is null); housing structural is best read as a show-context
           exposure result. See <Link to="/results" className="underline decoration-stone-300 underline-offset-2">Results</Link> for details.
         </p>
       </div>
@@ -177,11 +177,10 @@ export default function Landing() {
           The bar chart above shows each appearance's single strongest story.
           The statistical analysis is more granular: it scores every appearance
           on all six stories at once, so an appearance labeled "Fed Failure" can
-          still carry some housing or geopolitical signal if the guest's typical
-          mix differs from the show's. This is why a story like Housing
-          Structural can produce significant results even though only 866 of
-          15,930 appearances are housing-dominant: many other appearances carry
-          partial housing signal too.
+          still carry some geopolitical or partisan signal if the guest's typical
+          mix differs from the show's. Each story's dose therefore draws on far
+          more than the appearances where it happens to be the single dominant
+          label.
         </div>
       </div>
 
