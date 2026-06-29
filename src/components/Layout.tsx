@@ -68,7 +68,17 @@ export default function Layout() {
             Data: 3,157 guest appearances from 351,554 podcast episodes (2017 &ndash; 2026).
           </p>
           <p className="text-xs" style={{ color: 'var(--text-light)' }}>
-            Paper: <em>"Stories People Hear About Inflation"</em>, Kazinnik (2026)
+            Paper:{' '}
+            <a
+              href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6896280"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity underline"
+              style={{ color: 'var(--ink)' }}
+            >
+              <em>"Stories People Hear About Inflation"</em>
+            </a>
+            , Kazinnik (2026)
           </p>
         </div>
       </footer>

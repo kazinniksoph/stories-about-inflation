@@ -75,6 +75,15 @@ export default function Landing() {
           delivery, and listener retention, and exposure to story content
           moves household inflation expectations in story-specific ways. This
           dashboard lets you explore the data.
+          <a
+            href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6896280"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 mt-3 font-medium hover:opacity-80 transition-opacity"
+            style={{ color: 'var(--gold)' }}
+          >
+            Read the paper <ArrowRight size={14} />
+          </a>
         </p>
       </div>
 
