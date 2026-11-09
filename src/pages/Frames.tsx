@@ -2,10 +2,17 @@ import { useEffect, useState } from 'react';
 import { FRAME_COLORS, FRAME_LABELS, FRAME_DESCRIPTIONS, FOCUS_FRAMES } from '../types';
 import FrameBadge from '../components/FrameBadge';
 
+interface NeuronExample {
+  title: string;
+  show: string;
+  date: string;
+}
+
 interface Neuron {
   id: number;
   correlation: number;
-  theme: string;
+  usage: number;
+  examples: NeuronExample[];
 }
 
 interface TopEpisode {
@@ -33,9 +40,7 @@ interface MethodologyData {
   non_aligned: Record<string, NonAligned>;
 }
 
-// Use the canonical FOCUS_FRAMES list (the three robust stories: housing
-// structural, geopolitical, partisan blame). Single source of truth in
-// src/types/index.ts.
+// The six recovered stories. Single source of truth in src/types/index.ts.
 const FOCUS_ORDER = FOCUS_FRAMES;
 
 export default function Frames() {
@@ -60,8 +65,9 @@ export default function Frames() {
         <h2 className="text-xl font-bold text-stone-900">What does each story actually capture?</h2>
         <p className="text-sm mt-1" style={{ color: 'var(--text-light)' }}>
           A sparse autoencoder (SAE) is a neural network that learns the recurring
-          patterns in how inflation is discussed across hundreds of thousands of
-          podcast episodes. It does this without being told what to look for in advance.
+          patterns in how inflation is discussed across 351,554 podcast episodes,
+          without being told what to look for. The model here has 1,024 dimensions,
+          of which 27 line up with one of six stories from the inflation literature.
         </p>
       </div>
 
@@ -93,16 +99,22 @@ export default function Frames() {
               How the SAE captures this story
             </h3>
             <p className="text-xs mb-4" style={{ color: 'var(--text-light)' }}>
-              Each neuron is one of the patterns the SAE learned. The correlation (r)
-              measures how well that neuron lines up with the story label assigned
-              by an independent classifier. Higher r means a stronger match.
+              Each dimension is one of the patterns the SAE learned. The correlation (r)
+              measures how well it lines up with the story label assigned by an
+              independent classifier; a negative r means the dimension marks episodes
+              that are not this story. Under each are the episodes where it is most active.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-5">
               {frame.neurons.map(n => (
                 <div key={n.id} className="rounded-md p-3" style={{ border: '1px solid var(--border)' }}>
                   <div className="flex items-center justify-between mb-1">
-                    <span className="text-sm font-mono" style={{ color: 'var(--text)' }}>Neuron {n.id}</span>
+                    <span className="text-sm font-mono" style={{ color: 'var(--text)' }}>
+                      Dimension {n.id}
+                      <span className="ml-2 font-sans text-xs" style={{ color: 'var(--text-light)' }}>
+                        active in {n.usage.toLocaleString()} episodes
+                      </span>
+                    </span>
                     <span
                       className="text-xs font-mono px-2 py-0.5 rounded-full"
                       style={{
@@ -113,7 +125,13 @@ export default function Frames() {
                       r = {n.correlation.toFixed(3)}
                     </span>
                   </div>
-                  <p className="text-xs leading-relaxed" style={{ color: 'var(--text-light)' }}>{n.theme}</p>
+                  <ul className="text-xs leading-relaxed space-y-0.5 mt-1.5" style={{ color: 'var(--text-light)' }}>
+                    {n.examples.map(ex => (
+                      <li key={ex.title + ex.date} className="truncate" title={`${ex.title} (${ex.show}, ${ex.date})`}>
+                        {ex.title} <span style={{ opacity: 0.7 }}>· {ex.show}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
@@ -164,7 +182,7 @@ export default function Frames() {
               What the data doesn't separate
             </h3>
             <p className="text-xs mt-0.5" style={{ color: 'var(--text-light)' }}>
-              Three theory-motivated stories did not align with any SAE neuron. Click to see why.
+              Three theory-motivated stories did not align with any SAE dimension. Click to see why.
             </p>
           </div>
           <span className="text-stone-400 text-xs group-open:rotate-90 transition-transform ml-4 shrink-0">&#9654;</span>

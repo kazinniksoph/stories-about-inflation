@@ -278,7 +278,8 @@ export default function Geography() {
                   const t = maxVal > 0 ? Math.max(0, entry.cumDose) / maxVal : 0;
                   const alphaPct = entry.cumDose <= 0 ? 8 : Math.round(15 + t * 70);
                   const bg = `${color}${alphaPct.toString(16).padStart(2, '0')}`;
-                  const textColor = t > 0.55 ? '#ffffff' : '#1f3550';
+                  // Tile tints never exceed about a third opacity, so dark text stays legible.
+                  const textColor = '#1f3550';
                   const topG = topGuestPerFrameByState[st];
                   const tooltip = topG
                     ? `${entry.name}: ${entry.cumDose.toFixed(4)}\nTop ${FRAME_LABELS[selectedFrame]} carrier: ${topG.top_guest} (${topG.n_events} events)`

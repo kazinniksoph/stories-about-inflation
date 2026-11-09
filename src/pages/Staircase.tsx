@@ -13,6 +13,7 @@ const CHART_COLORS: Record<string, string> = {
   HOUSING_STRUCTURAL: '#0e7490',
   FED_FAILURE: '#c2410c',
   SUPPLY_SHOCK: '#15803d',
+  WAGE_SPIRAL: '#9d174d',
   OTHER: '#c4bfb6',
 };
 
@@ -111,6 +112,7 @@ export default function Staircase() {
             />
             {allFrames.map(f => (
               <Area
+                isAnimationActive={false}
                 key={f}
                 type="monotone"
                 dataKey={f}
@@ -166,6 +168,7 @@ export default function Staircase() {
               tickLine={false}
             />
             <Area
+                isAnimationActive={false}
               type="monotone"
               dataKey="total"
               fill="#1a2e44"

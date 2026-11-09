@@ -122,13 +122,13 @@ export const FRAME_DESCRIPTIONS: Record<string, string> = {
   TRANSITORY: 'Inflation described as temporary, a short-lived blip that will resolve on its own.',
 };
 
-// The three frames significant at conventional 5% in the 1Y headline (paper §5.3):
-// housing structural, geopolitical, and partisan blame. The three differ in causal
-// strength: geopolitical clears every validity check, partisan blame is correlationally
-// robust but qualified, and housing reads as a show-context exposure result. Supply
-// shock and Fed failure do not reach significance; wage-price spiral is null.
+// The six stories the sparse autoencoder recovers, in display order. Used by every
+// page's charts and filters.
 export const FOCUS_FRAMES = [
-  'HOUSING_STRUCTURAL',
   'GEOPOLITICAL',
   'PARTISAN_BLAME',
+  'HOUSING_STRUCTURAL',
+  'FED_FAILURE',
+  'SUPPLY_SHOCK',
+  'WAGE_SPIRAL',
 ] as const;

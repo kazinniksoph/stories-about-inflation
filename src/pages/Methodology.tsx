@@ -28,12 +28,12 @@ export default function Methodology() {
       <div className="text-center">
         <h2 className="text-xl font-bold" style={{ color: 'var(--navy)' }}>How we measure inflation stories</h2>
         <p className="text-sm mt-2 leading-relaxed mx-auto max-w-2xl" style={{ color: 'var(--text-light)' }}>
-          Starting from a commercial podcast database covering 4.3 million shows
-          and 49 million transcribed episodes, each filtering step narrows the
-          sample to episodes that substantively discuss inflation and have the
-          metadata needed for causal identification. Transcripts come from a
-          commercial podcast database that ingests RSS feeds and transcribes
-          each episode using Whisper automatic speech recognition.
+          Starting from a commercial podcast database covering 4.67 million
+          feeds and 49 million transcribed episodes, each filtering step narrows
+          the sample to episodes that discuss inflation and have the guest and
+          audience metadata needed to measure exposure. The database ingests RSS
+          feeds and transcribes each episode using Whisper automatic speech
+          recognition.
         </p>
       </div>
 
@@ -83,6 +83,7 @@ export default function Methodology() {
           })}
         </div>
       </div>
+
     </div>
   );
 }

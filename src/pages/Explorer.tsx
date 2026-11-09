@@ -122,8 +122,9 @@ export default function Explorer() {
         <h2 className="text-xl font-bold text-stone-900">Guest Appearance Explorer</h2>
         <p className="text-sm text-stone-500 mt-1 leading-relaxed">
           Every row is a podcast episode where a carrier guest appeared on
-          someone else's show. Click any row to see the episode title, read a
-          transcript excerpt, and listen to the full episode.
+          someone else's show, and where the guest was verified as speaking.
+          Click any row to see the episode title and, where available, a
+          transcript excerpt and the audio.
         </p>
         <p className="text-sm text-stone-500 mt-1">
           Showing {filtered.length.toLocaleString()} appearances
@@ -253,7 +254,7 @@ export default function Explorer() {
                     <p className="text-xs text-stone-400 mb-1.5 uppercase tracking-wide">Narrative surprise scores</p>
                     <p className="text-xs text-stone-400 mb-2">How much this guest's inflation framing differs from the show's baseline, by frame:</p>
                   </div>
-                  <div className="grid grid-cols-5 gap-2 text-xs">
+                  <div className="grid grid-cols-3 md:grid-cols-6 gap-2 text-xs">
                     {FOCUS_FRAMES.map(f => {
                       const key = `surp_SAE_${f}` as keyof InjectionEvent;
                       const val = ev[key] as number;

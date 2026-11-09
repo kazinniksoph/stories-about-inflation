@@ -29,8 +29,8 @@ async function fetchJson<T>(path: string): Promise<T> {
 export async function loadEvents(): Promise<InjectionEvent[]> {
   if (!eventsCache) {
     // Fetch events and per-episode extras in parallel, then merge audio_url
-    // and transcript excerpt onto the matching events. ~1,685 of the 15,930
-    // events have extras coverage; the rest pass through unchanged.
+    // and transcript excerpt onto the matching events. Most events have a
+    // title; about 1,300 also have an excerpt and audio link.
     const [events, extras] = await Promise.all([
       fetchJson<InjectionEvent[]>('/data/injection_events.json'),
       fetchJson<Record<string, { episode_title?: string; episode_audio_url?: string; excerpt?: string }>>(

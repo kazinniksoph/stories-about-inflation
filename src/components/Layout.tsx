@@ -65,7 +65,7 @@ export default function Layout() {
       <footer style={{ borderTop: '1px solid var(--border)' }} className="mt-16">
         <div className="mx-auto max-w-7xl px-6 py-5 flex items-center justify-between">
           <p className="text-xs" style={{ color: 'var(--text-light)' }}>
-            Data: 3,157 guest appearances from 351,554 podcast episodes (2017 &ndash; 2026).
+            Data: 11,427 verified guest appearances from 351,554 podcast episodes (2017 &ndash; 2026).
           </p>
           <p className="text-xs" style={{ color: 'var(--text-light)' }}>
             Paper:{' '}
